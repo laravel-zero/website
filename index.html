@@ -9,13 +9,25 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">Loading ...</div>
   <script>
     window.$docsify = {
-      name: 'laravel-zero',
-      repo: 'laravel-zero'
+      repo: 'laravel-zero',
+      auto2top: true,
+      coverpage: true,
+      executeScript: true,
+      search: {
+        noData: {
+          '/': 'No results!'
+        },
+        paths: 'auto',
+        placeholder: {
+          '/': 'Search'
+        }
+      },
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
