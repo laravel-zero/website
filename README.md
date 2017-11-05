@@ -19,7 +19,7 @@ Laravel Zero was created and maintained by [Nuno Maduro](https://github.com/nuno
 - Auto detects commands and supports [Laravel](https://laravel.com) service providers.
 - Supports [desktop notifications](https://github.com/laravel-zero/laravel-zero) on Linux, Windows & MacOS.
 
-## Installation & Usage
+## Requirements & Installation
 
 > **Requires [PHP 7.1+](https://php.net/releases/)**
 
@@ -39,13 +39,13 @@ Or simply create a new Laravel Zero project using [Composer](https://getcomposer
 composer create-project --prefer-dist laravel-zero/laravel-zero your-app-name
 ```
 
-Laravel Zero provides a default command placed in the `app/HelloCommand.php` file which will be executed by default. To execute it, run the following command in your app's directory:
+To run your application just type in your application root folder:
 
 ```bash
 php your-app-name
 ```
 
-You can rename your app anytime by running the following command in your app directory:
+You can rename your application anytime by running the following command in your app directory:
 
 ```sh
 php your-app-name app:rename new-name
@@ -53,45 +53,124 @@ php your-app-name app:rename new-name
 
 ## Usage
 
-You may review the documentation of the Artisan Console component:
+### App\Commands
+
+Laravel Zero provides you an `app\Commands\HelloCommand.php` as example. Create a new command using:
+
+```sh
+php your-app-name make:command NewCommand
+```
+
+Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
 
  - [Defining Input Expectations](https://laravel.com/docs/5.5/artisan#defining-input-expectations).
  - [Command I/O](https://laravel.com/docs/5.5/artisan#command-io).
 
-<a href="components"></a>
-## Components
+The default command of your aplication is the symfony *ListCommand*, that provides a list of commands.
+You may change this behavior modifying the `config/app.php`:
 
-Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level. As you might have already guessed it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works with the same breeze in Laravel Zero environment too.
-
-If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, you may consider the [Filesystem](https://laravel.com/docs/5.5/filesystem) component.
-
-To install the components run the following command in your Laravel Zero app directory:
-
-```sh
-php your-app-name component:install
+```php
+    'default-command' => App\Commands\DefaultCommand::class,
 ```
 
-Database usage:
+All *commands* should exists within *app/Commands* directory in order to be automatic registered by the application.
+You may want to load other commands or other commands namespaces modifying `config/app.php`:
+
+```php
+    'commands' => [
+      App\Prod\CleanCache::class,
+    ],
+
+    'commands-namespaces' => [
+      "App\Local\Commands",
+      "App\Deploy\Commands"
+    ],
+```
+
+You may want to hide *development* commands moving the application to production modifying the `config/app.php`:
+
+```php
+    'production' => true,
+```
+
+### App\ServiceProviders
+
+Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.5/providers) for defining concrete
+implementations. Define them in `app\Providers\AppServiceProvider.php` or create new service providers.
+The `config/app.php` *providers* array contain the registered service providers.
+Below there is an example of a concrete implementation bound to a contract/interface.
+
+```php
+    public function register()
+    {
+        $this->app->singleton(Contract::class, function ($app) {
+            return new Concrete(config('database'));
+        });
+    }
+
+    app(Contract::class) // Returns a Concrete implementation.
+```
+
+### Config
+
+The `app\config.php` file contains your application configuration, there you can create a new configuration `foo => true` and access to the
+that same configuration using `config('app.foo')`.
+
+All files within `config` folder are automatic registered as configuration files.
+You can also create specific configuration files, E.g: `app\bar.php` and access it by `config('bar.foo')`.
+
+### Tests
+
+The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero ships with an *Integration* suite that can be used like
+the example below:
+
+```php
+class CommandTest extends TestCase
+{
+    /** @test */
+    public function it_checks_the_command_output(): void
+    {
+        $this->app->call('command-name');
+
+        $this->assertTrue($this->app->output() === 'Love beautiful code? We do too.');
+    }
+}
+```
+
+Running your application *tests*:
+
+```sh
+./vendor/bin/phpunit
+```
+
+<a href="database-component"></a>
+## Database Component
+
+Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level.
+As you might have already guessed it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works with the same breeze in Laravel Zero environment too.
+
+```sh
+php your-app-name database:install
+```
+
+Usage:
 
 ```php
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
-
-Schema::create('users', function ($table) {
-    $table->increments('id');
-    $table->string('email')->unique();
-    $table->timestamps();
-});
 
 DB::table('users')->insert(
     ['email' => 'enunomaduro@gmail.com']
 );
 
 $users = DB::table('users')->get();
-
 ```
 
-Filesystem usage:
+Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) feature is also included.
+
+<a href="filesystem-component"></a>
+## Filesystem Component
+
+If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
 
 ```php
 use Illuminate\Support\Facades\File;
@@ -118,6 +197,12 @@ You may define all of your scheduled tasks in the `schedule` method of the comma
     }
 ```
 
+You may want to remove this feature, modifying `app/config.php`:
+
+```php
+    'with-scheduler' => false,
+```
+
 <a name="build-a-standalone-application"></a>
 ## Building a standalone application
 
@@ -127,9 +212,7 @@ Your Laravel Zero project, by default, allows you to build a standalone PHAR arc
 php your-app-name app:build <your-build-name>
 ```
 
-The build will provide a single phar archive, ready to use, containing all the code of your project and its dependencies.
-
-Note that the generated file will still need a PHP installation respecting your project's requirements (PHP version, extensions, etc.). You will then be able to execute it directly:
+The build will provide a single phar archive, ready to use, containing all the code of your project and its dependencies. You will then be able to execute it directly:
 
 ```sh
 ./builds/<your-build-name>

@@ -1,6 +1,6 @@
 ![logo](logo.png)
 
-# Laravel Zero <small>3.10</small>
+# Laravel Zero <small>4.0 (Not released yet)</small>
 
 > Micro-framework for console/command-line applications
 
