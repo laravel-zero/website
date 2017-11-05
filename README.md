@@ -13,7 +13,7 @@
 Laravel Zero was created and maintained by [Nuno Maduro](https://github.com/nunomaduro). Laravel Zero is a micro-framework that provides an elegant starting point for your next console application. **Unofficial** and customized version of Laravel optimized for building command-line applications.
 
 - Build on top of the [Laravel](https://laravel.com) components.
-- Optional the installation of the [Database/Filesystem components](#components).
+- Optional the installation of [Eloquent](#database).
 - Built with [PHP 7](https://php.net) using modern coding standards.
 - Ships with a [Scheduler](#scheduler) and an [Standalone Compiler](#build-a-standalone-application).
 - Auto detects commands and supports [Laravel](https://laravel.com) service providers.
@@ -143,8 +143,8 @@ Running your application *tests*:
 ./vendor/bin/phpunit
 ```
 
-<a href="database-component"></a>
-## Database Component
+<a href="database"></a>
+## Database
 
 Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level.
 As you might have already guessed it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works with the same breeze in Laravel Zero environment too.
@@ -167,8 +167,8 @@ $users = DB::table('users')->get();
 
 Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) feature is also included.
 
-<a href="filesystem-component"></a>
-## Filesystem Component
+<a href="filesystem"></a>
+## Filesystem
 
 If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
 
@@ -224,11 +224,9 @@ or on Windows:
 C:\application\path> php builds\<your-build-name>
 ```
 
-## Contributing
+## Support & Community
 
 Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](CONTRIBUTING.md).
-
-## Stay In Touch
 
 You can have a look at the [CHANGELOG](CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/laravelzero)
 
