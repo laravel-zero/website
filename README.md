@@ -1,4 +1,4 @@
-# About
+## About
 
 <p align="center">
   <a href="https://styleci.io/repos/96572957"><img src="https://styleci.io/repos/96572957/shield" alt="StyleCI Status"></img></a>
