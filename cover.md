@@ -1,6 +1,5 @@
-![logo](logo.png)
-
-# Laravel Zero <small>4.0 (Not released yet)</small>
+<img src="logo.png" width="50%">
+# 4.0 (Not released yet)
 
 > Micro-framework for console/command-line applications
 
