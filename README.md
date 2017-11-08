@@ -172,15 +172,16 @@ Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) feature i
 
 If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
 
-```php
-use Illuminate\Support\Facades\File;
+Note: The root directory is `your-app-name/storage/local`.
 
-File::put("file.txt", "Thank you for considering Laravel Zero.");
+```php
+use Illuminate\Support\Facades\Storage;
+
+Storage::put("reminders.txt", "Task 1");
 
 ```
 
 <a href="scheduler"></a>
-
 ## Scheduler
 
 Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.5/scheduling) of Laravel, to use it you may need to add the following Cron entry to your server:
@@ -223,6 +224,10 @@ or on Windows:
 ```sh
 C:\application\path> php builds\<your-build-name>
 ```
+
+## Collision - Error handler
+
+TODO
 
 ## Support & Community
 
