@@ -14,9 +14,8 @@ Laravel Zero was created and maintained by [Nuno Maduro](https://github.com/nuno
 
 - Build on top of the [Laravel](https://laravel.com) components.
 - Optional the installation of [Eloquent](#database).
-- Auto detects commands and supports [Laravel](https://laravel.com) service providers.
+- Auto detects commands and supports [desktop notifications](#desktop-notifications) on Linux, Windows & MacOS.
 - Ships with a [Scheduler](#scheduler) and an [Standalone Compiler](#build-a-standalone-application).
-- Supports [desktop notifications](https://github.com/laravel-zero/laravel-zero) on Linux, Windows & MacOS.
 - Integration with [Collision](https://github.com/nunomaduro/collision) - A Detailed & intuitive error handler
 
 ## Requirements & Installation
@@ -128,11 +127,11 @@ Below there is an example of a concrete implementation bound to a contract/inter
 
 ### Config
 
-The `app\config.php` file contains your application configuration, there you can create a new configuration `foo => true` and access to the
+The `config\app.php` file contains your application configuration, there you can create a new configuration `foo => true` and access to the
 that same configuration using `config('app.foo')`.
 
 All files within `config` folder are automatic registered as configuration files.
-You can also create specific configuration files, E.g: `app\bar.php` and access it by `config('bar.foo')`.
+You can also create specific configuration files, E.g: `app\bar.php` and access it by `config('bar')`.
 
 ### Tests
 
@@ -212,13 +211,13 @@ You may define all of your scheduled tasks in the `schedule` method of the comma
     }
 ```
 
-You may want to remove this feature, modifying `app/config.php`:
+You may want to remove this feature, modifying `config/app.php`:
 
 ```php
     'with-scheduler' => false,
 ```
 
-<a name="build-a-standalone-application"></a>
+<a href="build-a-standalone-application"></a>
 ## Building a standalone application
 
 Your Laravel Zero project, by default, allows you to build a standalone PHAR archive to ease the deployment or the distribution of your project.
@@ -242,16 +241,16 @@ C:\application\path> php builds\<your-build-name>
 ## Collision - Detailed & intuitive interface for errors
 
 Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for a similar error handler! Laravel Zero
-ships with [Collision]() giving you a detailed & intuitive interface for errors and exceptions on your console application.
+ships with [Collision](https://github.com/nunomaduro/collision) giving you a detailed & intuitive interface for errors and exceptions on your console application.
 
 Get more details: [https://github.com/nunomaduro/collision](https://github.com/nunomaduro/collision).
 
 ## Support & Community
 
-Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](CONTRIBUTING.md).
+Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/CONTRIBUTING.md).
 
-You can have a look at the [CHANGELOG](CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/laravelzero)
+You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/laravelzero)
 
 ## License
 
-Laravel Zero is an open-sourced software licensed under the [MIT license](LICENSE.md).
+Laravel Zero is an open-sourced software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/LICENSE.md).
