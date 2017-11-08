@@ -14,10 +14,10 @@ Laravel Zero was created and maintained by [Nuno Maduro](https://github.com/nuno
 
 - Build on top of the [Laravel](https://laravel.com) components.
 - Optional the installation of [Eloquent](#database).
-- Built with [PHP 7](https://php.net) using modern coding standards.
-- Ships with a [Scheduler](#scheduler) and an [Standalone Compiler](#build-a-standalone-application).
 - Auto detects commands and supports [Laravel](https://laravel.com) service providers.
+- Ships with a [Scheduler](#scheduler) and an [Standalone Compiler](#build-a-standalone-application).
 - Supports [desktop notifications](https://github.com/laravel-zero/laravel-zero) on Linux, Windows & MacOS.
+- Integration with [Collision](https://github.com/nunomaduro/collision) - A Detailed & intuitive error handler
 
 ## Requirements & Installation
 
@@ -225,9 +225,12 @@ or on Windows:
 C:\application\path> php builds\<your-build-name>
 ```
 
-## Collision - Error handler
+## Collision - Detailed & intuitive interface for errors
 
-TODO
+Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for a similar error handler! Laravel Zero
+ships with [Collision]() giving you a detailed & intuitive interface for errors and exceptions on your console application.
+
+Get more details: [https://github.com/nunomaduro/collision](https://github.com/nunomaduro/collision).
 
 ## Support & Community
 
