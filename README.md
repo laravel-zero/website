@@ -63,8 +63,23 @@ php your-app-name make:command NewCommand
 
 Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
 
- - [Defining Input Expectations](https://laravel.com/docs/5.5/artisan#defining-input-expectations).
- - [Command I/O](https://laravel.com/docs/5.5/artisan#command-io).
+- The [Defining Input Expectations](https://laravel.com/docs/5.5/artisan#defining-input-expectations) section allows you to understand
+ how to gather input from the user through arguments or options. As example:
+
+```php
+ protected $signature = 'user:create
+                        {name : The name of the user} // required
+                        {--age= : The age of the user}'; // optional.
+```
+
+<a href="desktop-notifications"></a>
+- The [Command I/O](https://laravel.com/docs/5.5/artisan#command-io) allows you to understand how to capture those input expectations and
+interact the with using commands like `line`, `info`, `comment`, `question` and `error` methods.
+
+Laravel Zero adds an extra option allowing desktop notifications:
+```php
+  $this->notify("Title", "Body", "icon.png");
+```
 
 The default command of your aplication is the symfony *ListCommand*, that provides a list of commands.
 You may change this behavior modifying the `config/app.php`:
@@ -167,7 +182,6 @@ $users = DB::table('users')->get();
 
 Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) feature is also included.
 
-<a href="filesystem"></a>
 ## Filesystem
 
 If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
