@@ -247,10 +247,10 @@ Get more details: [https://github.com/nunomaduro/collision](https://github.com/n
 
 ## Support & Community
 
-Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/CONTRIBUTING.md).
+Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/blob/stable/CONTRIBUTING.md).
 
-You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/laravelzero)
+You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/blob/stable/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/laravelzero)
 
 ## License
 
-Laravel Zero is an open-sourced software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/LICENSE.md).
+Laravel Zero is an open-sourced software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/stable/LICENSE.md).
