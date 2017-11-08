@@ -16,12 +16,18 @@
 </head>
 <body>
   <div id="app">Loading ...</div>
+  <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
   <script>
     window.$docsify = {
       repo: 'laravel-zero',
       auto2top: true,
       executeScript: true,
       coverpage: 'cover.md',
+      plugins: [
+        window.EditOnGithubPlugin.create(
+          'https://github.com/laravel-zero/laravel-zero/edit/stable/'
+        )
+      ],
       search: {
         noData: {
           '/': 'No results!'
@@ -30,7 +36,7 @@
         placeholder: {
           '/': 'Search'
         }
-      },
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
