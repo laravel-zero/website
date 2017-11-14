@@ -92,16 +92,16 @@ You may change this behavior modifying the `config/app.php`:
 ```
 
 All *commands* should exists within *app/Commands* directory in order to be automatic registered by the application.
-You may want to load other commands or other commands namespaces modifying `config/app.php`:
+You may want to load other commands or other commands paths modifying `config/app.php`:
 
 ```php
     'commands' => [
       App\Prod\CleanCache::class,
     ],
 
-    'commands-namespaces' => [
-      "App\Local\Commands",
-      "App\Deploy\Commands"
+    'commands-paths' => [
+      "Local\Commands",
+      "Deploy\Commands"
     ],
 ```
 
