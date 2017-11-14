@@ -100,8 +100,8 @@ You may want to load other commands or other commands paths modifying `config/ap
     ],
 
     'commands-paths' => [
-      "Local\Commands",
-      "Deploy\Commands"
+      "Local/Commands",
+      "Deploy/Commands"
     ],
 ```
 
