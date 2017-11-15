@@ -242,12 +242,18 @@ or on Windows:
 C:\application\path> php builds\<your-build-name>
 ```
 
-## Collision - Detailed & intuitive interface for errors
+## Collision - Detailed & intuitive errors
 
 Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for a similar error handler! Laravel Zero
 ships with [Collision](https://github.com/nunomaduro/collision) giving you a detailed & intuitive interface for errors and exceptions on your console application.
 
 Get more details: [https://github.com/nunomaduro/collision](https://github.com/nunomaduro/collision).
+
+## Tinker
+
+[Laravel Tinker](https://github.com/laravel/tinker) is a powerful REPL for Laravel. [Jorge González](https://github.com/scrubmx) made it available for Laravel Zero.
+
+Get more details: [https://github.com/intonate/tinker-zero](https://github.com/intonate/tinker-zero).
 
 ## Support & Community
 
