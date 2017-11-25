@@ -33,25 +33,25 @@ composer global require laravel-zero/installer
 ```
 
 ```bash
-laravel-zero new your-app-name
+laravel-zero new <your-app-name>
 ```
 
 Or simply create a new Laravel Zero project using [Composer](https://getcomposer.org):
 
 ```bash
-composer create-project --prefer-dist laravel-zero/laravel-zero your-app-name
+composer create-project --prefer-dist laravel-zero/laravel-zero <your-app-name>
 ```
 
 To run your application just type in your application root folder:
 
 ```bash
-php your-app-name
+php <your-app-name>
 ```
 
 You can rename your application anytime by running the following command in your app directory:
 
-```sh
-php your-app-name app:rename new-name
+```bash
+php <your-app-name> app:rename <new-name>
 ```
 
 ## Usage
@@ -60,8 +60,8 @@ php your-app-name app:rename new-name
 
 Laravel Zero provides you an `app\Commands\HelloCommand.php` as example. Create a new command using:
 
-```sh
-php your-app-name make:command NewCommand
+```bash
+php <your-app-name> make:command <NewCommand>
 ```
 
 Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
@@ -157,7 +157,7 @@ class CommandTest extends TestCase
 
 Running your application *tests*:
 
-```sh
+```bash
 ./vendor/bin/phpunit
 ```
 
@@ -167,8 +167,8 @@ Running your application *tests*:
 Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level.
 As you might have already guessed it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works with the same breeze in Laravel Zero environment too.
 
-```sh
-php your-app-name database:install
+```bash
+php <your-app-name> database:install
 ```
 
 Usage:
