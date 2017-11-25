@@ -14,13 +14,13 @@
 
 <h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
 
-Laravel Zero was created and maintained by [Nuno Maduro](https://github.com/nunomaduro). Laravel Zero is a micro-framework that provides an elegant starting point for your console application. **Unofficial** and customized version of Laravel optimized for building command-line applications.
+Laravel Zero was created and is maintained by [Nuno Maduro](https://github.com/nunomaduro). Laravel Zero is a micro-framework that provides an elegant starting point for your console application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
 
-- Build on top of the [Laravel](https://laravel.com) components.
-- Optional the installation of [Eloquent](#database).
+- Built on top of the [Laravel](https://laravel.com) components.
+- Optional installation of [Eloquent](#database).
 - Auto detects commands and supports [desktop notifications](#desktop-notifications) on Linux, Windows & MacOS.
 - Ships with a [Scheduler](#scheduler) and an [Standalone Compiler](#build-a-standalone-application).
-- Integration with [Collision](https://github.com/nunomaduro/collision) - A Detailed & intuitive error handler
+- Integration with [Collision](https://github.com/nunomaduro/collision) - A Detailed & intuitive error handler.
 
 ## Requirements & Installation
 
@@ -33,35 +33,35 @@ composer global require laravel-zero/installer
 ```
 
 ```bash
-laravel-zero new your-app-name
+laravel-zero new <your-app-name>
 ```
 
 Or simply create a new Laravel Zero project using [Composer](https://getcomposer.org):
 
 ```bash
-composer create-project --prefer-dist laravel-zero/laravel-zero your-app-name
+composer create-project --prefer-dist laravel-zero/laravel-zero <your-app-name>
 ```
 
-To run your application just type in your application root folder:
+To run your application, just execute in your application root folder:
 
 ```bash
-php your-app-name
+php <your-app-name>
 ```
 
 You can rename your application anytime by running the following command in your app directory:
 
-```sh
-php your-app-name app:rename new-name
+```bash
+php <your-app-name> app:rename <new-name>
 ```
 
 ## Usage
 
 ### App\Commands
 
-Laravel Zero provides you an `app\Commands\HelloCommand.php` as example. Create a new command using:
+Laravel Zero provides you with a `app\Commands\HelloCommand.php` command as an example. Create a new command using:
 
-```sh
-php your-app-name make:command NewCommand
+```bash
+php <your-app-name> make:command <NewCommand>
 ```
 
 Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
@@ -85,14 +85,14 @@ Laravel Zero adds an extra option allowing desktop notifications:
 ```
 
 The default command of your aplication is the symfony *ListCommand*, that provides a list of commands.
-You may change this behavior modifying the `config/app.php`:
+You may change this behavior by modifying the `config/app.php`:
 
 ```php
     'default-command' => App\Commands\DefaultCommand::class,
 ```
 
-All *commands* should exists within *app/Commands* directory in order to be automatic registered by the application.
-You may want to load other commands or other commands paths modifying `config/app.php`:
+All *commands* should exist within the *app/Commands* directory in order to be automatically registered by the application.
+You may want to load other commands or other command paths by modifying `config/app.php`:
 
 ```php
     'commands' => [
@@ -105,7 +105,7 @@ You may want to load other commands or other commands paths modifying `config/ap
     ],
 ```
 
-You may want to hide *development* commands moving the application to production modifying the `config/app.php`:
+You may want to hide *development* commands and set the application context to production by modifying `config/app.php`:
 
 ```php
     'production' => true,
@@ -115,7 +115,7 @@ You may want to hide *development* commands moving the application to production
 
 Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.5/providers) for defining concrete
 implementations. Define them in `app\Providers\AppServiceProvider.php` or create new service providers.
-The `config/app.php` *providers* array contain the registered service providers.
+The `config/app.php` *providers* array contains the registered service providers.
 Below there is an example of a concrete implementation bound to a contract/interface.
 
 ```php
@@ -134,8 +134,8 @@ Below there is an example of a concrete implementation bound to a contract/inter
 The `config\app.php` file contains your application configuration, there you can create a new configuration `foo => true` and access to the
 that same configuration using `config('app.foo')`.
 
-All files within `config` folder are automatic registered as configuration files.
-You can also create specific configuration files, E.g: `app\bar.php` and access it by `config('bar')`.
+All files within the `config` folder are automatically registered as configuration files.
+You can also create specific configuration files, e.g: `app\bar.php` and access it with `config('bar')`.
 
 ### Tests
 
@@ -157,7 +157,7 @@ class CommandTest extends TestCase
 
 Running your application *tests*:
 
-```sh
+```bash
 ./vendor/bin/phpunit
 ```
 
@@ -165,10 +165,10 @@ Running your application *tests*:
 ## Database
 
 Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level.
-As you might have already guessed it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works with the same breeze in Laravel Zero environment too.
+As you might have already guessed it, it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works like a breeze in the Laravel Zero environment too.
 
-```sh
-php your-app-name database:install
+```bash
+php <your-app-name> database:install
 ```
 
 Usage:
@@ -187,7 +187,7 @@ Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) feature i
 
 ## Filesystem
 
-If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
+If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
 
 Note: The root directory is `your-app-name/storage/local`.
 
@@ -201,7 +201,7 @@ Storage::put("reminders.txt", "Task 1");
 <a href="scheduler"></a>
 ## Scheduler
 
-Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.5/scheduling) of Laravel, to use it you may need to add the following Cron entry to your server:
+Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.5/scheduling) system of Laravel. To use it, you may need to add the following Cron entry to your server:
 
 ```
 * * * * * php /path-to-your-project/your-app-name schedule:run >> /dev/null 2>&1
@@ -215,7 +215,7 @@ You may define all of your scheduled tasks in the `schedule` method of the comma
     }
 ```
 
-You may want to remove this feature, modifying `config/app.php`:
+You may want to remove this feature, by modifying `config/app.php`:
 
 ```php
     'with-scheduler' => false,
@@ -226,26 +226,26 @@ You may want to remove this feature, modifying `config/app.php`:
 
 Your Laravel Zero project, by default, allows you to build a standalone PHAR archive to ease the deployment or the distribution of your project.
 
-```sh
+```bash
 php your-app-name app:build <your-build-name>
 ```
 
 The build will provide a single phar archive, ready to use, containing all the code of your project and its dependencies. You will then be able to execute it directly:
 
-```sh
+```bash
 ./builds/<your-build-name>
 ```
 
 or on Windows:
 
-```sh
+```bash
 C:\application\path> php builds\<your-build-name>
 ```
 
 ## Collision - Detailed & intuitive errors
 
 Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for a similar error handler! Laravel Zero
-ships with [Collision](https://github.com/nunomaduro/collision) giving you a detailed & intuitive interface for errors and exceptions on your console application.
+ships with [Collision](https://github.com/nunomaduro/collision), giving you a detailed & intuitive interface for errors and exceptions on your console application.
 
 Get more details: [https://github.com/nunomaduro/collision](https://github.com/nunomaduro/collision).
 
@@ -263,4 +263,4 @@ You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-z
 
 ## License
 
-Laravel Zero is an open-sourced software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/stable/LICENSE.md).
+Laravel Zero is an open-source software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/stable/LICENSE.md).
