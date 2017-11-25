@@ -8,4 +8,5 @@
 
 
 [GitHub](https://github.com/laravel-zero/laravel-zero)
+[Demo](https://www.youtube.com/watch?v=6H5eCphgqVc)
 [Get Started](#about)
