@@ -19,7 +19,7 @@ Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.c
 - Built on top of the [Laravel](https://laravel.com) components.
 - Optional installation of [Eloquent](#database).
 - Auto detects commands and supports [desktop notifications](#desktop-notifications) on Linux, Windows & MacOS.
-- Ships with a [Scheduler](#scheduler) and an [Standalone Compiler](#build-a-standalone-application).
+- Ships with a [Scheduler](#scheduler) and a [Standalone Compiler](#build-a-standalone-application).
 - Integration with [Collision](https://github.com/nunomaduro/collision) - A Detailed & intuitive error handler.
 
 ## Requirements & Installation
