@@ -168,7 +168,7 @@ Laravel Zero allows you to install a **Database** component out of the box to pu
 As you might have already guessed it, it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works like a breeze in the Laravel Zero environment too.
 
 ```bash
-php <your-app-name> database:install
+php <your-app-name> install:database
 ```
 
 Usage:
