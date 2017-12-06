@@ -79,9 +79,18 @@ Concerning the Command file content, you may want to review the documentation of
 - The [Command I/O](https://laravel.com/docs/5.5/artisan#command-io) allows you to understand how to capture those input expectations and
 interact the with using commands like `line`, `info`, `comment`, `question` and `error` methods.
 
-Laravel Zero adds an extra option allowing desktop notifications:
+Desktop notifications:
 ```php
   $this->notify("Title", "Body", "icon.png");
+```
+
+Tasks:
+```php
+  $this->task("My task 1", function () {
+    return true;
+    // Output:
+    // My task 1: ✔
+  });
 ```
 
 The default command of your aplication is the symfony *ListCommand*, that provides a list of commands.
@@ -183,7 +192,31 @@ DB::table('users')->insert(
 $users = DB::table('users')->get();
 ```
 
-Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) feature is also included.
+Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) and [Database Seeding](https://laravel.com/docs/5.5/seeding) features are also included.
+
+<a href="log"></a>
+## Log
+
+Laravel Zero allows you to install a **Log** component.
+
+```bash
+php <your-app-name> install:log
+```
+
+Usage:
+
+```php
+use Illuminate\Support\Facades\Log;
+
+Log::emergency($message);
+Log::alert($message);
+Log::critical($message);
+Log::error($message);
+Log::warning($message);
+Log::notice($message);
+Log::info($message);
+Log::debug($message);
+```
 
 ## Filesystem
 
