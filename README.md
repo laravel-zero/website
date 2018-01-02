@@ -32,6 +32,8 @@ Via Laravel Zero Installer
 composer global require laravel-zero/installer
 ```
 
+> **Warning:** Since global Composer libraries can sometimes cause package version conflicts, you may wish to consider using `cgr`, which is a drop-in replacement for the `composer global require` command. The `cgr` library's installation instructions can be [found on GitHub](https://github.com/consolidation-org/cgr).
+
 ```bash
 laravel-zero new <your-app-name>
 ```
