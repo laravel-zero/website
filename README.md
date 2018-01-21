@@ -257,6 +257,29 @@ You may want to remove this feature, by modifying `config/app.php`:
     'with-scheduler' => false,
 ```
 
+<a href="dot-env"></a>
+## Environment Configuration
+
+You may want to install the [DotEnv PHP](https://github.com/vlucas/phpdotenv) component.
+It is often helpful to have different configuration values based on the environment the application is running in.
+
+```bash
+php <your-app-name> install:dotenv
+```
+
+The installation will create an empty `.env.example` on your project root. You should rename it manually to `.env`.
+
+Usage:
+Assuming that your `.env` contains:
+```
+SECRET_KEY=234567
+```
+
+You can access those variables using the `env()` helper:
+```php
+echo env('SECRET_KEY') // outputs 234567
+```
+
 <a href="build-a-standalone-application"></a>
 ## Building a standalone application
 
@@ -278,7 +301,7 @@ or on Windows:
 C:\application\path> php builds\<your-build-name>
 ```
 
-## Collision - Detailed & intuitive errors
+## Collision - Console errors
 
 Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for a similar error handler! Laravel Zero
 ships with [Collision](https://github.com/nunomaduro/collision), giving you a detailed & intuitive interface for errors and exceptions on your console application.
