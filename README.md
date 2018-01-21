@@ -15,7 +15,7 @@
 
 <h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
 
-Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your console application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
+Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your console application. It is a **unofficial** and customized version of Laravel optimized for building command-line applications.
 
 - Built on top of the [Laravel](https://laravel.com) components.
 - Optional installation of [Eloquent](#database).
@@ -96,7 +96,7 @@ Tasks:
   });
 ```
 
-The default command of your aplication is the symfony *ListCommand*, that provides a list of commands.
+The default command of your application is the symfony *ListCommand*, that provides a list of commands.
 You may change this behavior by modifying the `config/app.php`:
 
 ```php
@@ -151,7 +151,7 @@ You can also create specific configuration files, e.g: `app\bar.php` and access 
 
 ### Tests
 
-The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero ships with an *Integration* suite that can be used like
+The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero ships with a *Integration* suite that can be used like
 the example below:
 
 ```php
