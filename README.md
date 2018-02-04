@@ -225,7 +225,7 @@ Log::debug($message);
 
 If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
 
-Note: The root directory is `your-app-name/storage/local`.
+Note: The root directory is `your-app-name/storage/app`.
 
 ```php
 use Illuminate\Support\Facades\Storage;
