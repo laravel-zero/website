@@ -7,7 +7,6 @@
 <p align="center">
   <a href="https://travis-ci.org/laravel-zero/framework"><img src="https://img.shields.io/travis/laravel-zero/framework/stable.svg" alt="Build Status"></img></a>
   <a href="https://scrutinizer-ci.com/g/laravel-zero/framework"><img src="https://img.shields.io/scrutinizer/g/laravel-zero/framework.svg" alt="Quality Score"></img></a>
-  <a href="https://scrutinizer-ci.com/g/laravel-zero/framework"><img src="https://img.shields.io/scrutinizer/coverage/g/laravel-zero/framework.svg" alt="Coverage"></img></a>
   <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://poser.pugx.org/laravel-zero/framework/d/total.svg" alt="Total Downloads"></a>
   <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://poser.pugx.org/laravel-zero/framework/v/stable.svg" alt="Latest Stable Version"></a>
   <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://poser.pugx.org/laravel-zero/framework/license.svg" alt="License"></a>
@@ -25,21 +24,9 @@ Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.c
 
 ## Requirements & Installation
 
-> **Requires [PHP 7.1+](https://php.net/releases/)**
+> **Requires [PHP 7.1.3+](https://php.net/releases/)**
 
-Via Laravel Zero Installer
-
-```bash
-composer global require laravel-zero/installer
-```
-
-> **Warning:** Since global Composer libraries can sometimes cause package version conflicts, you may wish to consider using `cgr`, which is a drop-in replacement for the `composer global require` command. The `cgr` library's installation instructions can be [found on GitHub](https://github.com/consolidation-org/cgr).
-
-```bash
-laravel-zero new <your-app-name>
-```
-
-Or simply create a new Laravel Zero project using [Composer](https://getcomposer.org):
+Create a new Laravel Zero project using [Composer](https://getcomposer.org):
 
 ```bash
 composer create-project --prefer-dist laravel-zero/laravel-zero <your-app-name>
@@ -61,7 +48,7 @@ php <your-app-name> app:rename <new-name>
 
 ### App\Commands
 
-Laravel Zero provides you with a `app\Commands\HelloCommand.php` command as an example. Create a new command using:
+Laravel Zero provides you with a `app\Commands\InspiringCommand.php` command as an example. Create a new command using:
 
 ```bash
 php <your-app-name> make:command <NewCommand>
@@ -69,7 +56,7 @@ php <your-app-name> make:command <NewCommand>
 
 Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
 
-- The [Defining Input Expectations](https://laravel.com/docs/5.5/artisan#defining-input-expectations) section allows you to understand
+- The [Defining Input Expectations](https://laravel.com/docs/5.6/artisan#defining-input-expectations) section allows you to understand
  how to gather input from the user through arguments or options. As example:
 
 ```php
@@ -79,7 +66,7 @@ Concerning the Command file content, you may want to review the documentation of
 ```
 
 <a href="desktop-notifications"></a>
-- The [Command I/O](https://laravel.com/docs/5.5/artisan#command-io) allows you to understand how to capture those input expectations and
+- The [Command I/O](https://laravel.com/docs/5.6/artisan#command-io) allows you to understand how to capture those input expectations and
 interact the with using commands like `line`, `info`, `comment`, `question` and `error` methods.
 
 Desktop notifications:
@@ -90,30 +77,95 @@ Desktop notifications:
 Tasks:
 ```php
   $this->task("My task 1", function () {
-    return true;
-    // Output:
-    // My task 1: ✔
+      return true;
+      // Output:
+      // My task 1: ✔
   });
 ```
 
-The default command of your application is the symfony *ListCommand*, that provides a list of commands.
-You may change this behavior by modifying the `config/app.php`:
-
+Tasks:
 ```php
-    'default-command' => App\Commands\DefaultCommand::class,
+  $option = $this->menu('Pizza menu', [
+      'Freshly baked muffins',
+      'Freshly baked croissants',
+      'Turnovers, crumb cake, cinnamon buns, scones',
+  ])->open();
+
+  $this->info("You have chosen the option number #$option");
 ```
 
-All *commands* should exist within the *app/Commands* directory in order to be automatically registered by the application.
-You may want to load other commands or other command paths by modifying `config/app.php`:
+The default command of your application the *ListCommand*, that provides a list of commands.
+You may change this behavior by modifying the `config/commands.php`:
 
 ```php
-    'commands' => [
-      App\Prod\CleanCache::class,
+    /*
+    |--------------------------------------------------------------------------
+    | Default Command
+    |--------------------------------------------------------------------------
+    |
+    | Laravel Zero will always run the command specified below when no command name is
+    | provided. Consider change the default command specifing another command class.
+    | You cannot pass arguments to the default command because they are ignored.
+    |
+    */
+    'default' => NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Load Commands Paths.
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "paths" that should be loaded by the console's
+    | kernel. Foreach "path" present on the array provided below the kernel
+    | will extract all "Illuminate\Console\Command" based class commands.
+    |
+    */
+    'paths' => [app_path('Commands')],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Add Commands
+    |--------------------------------------------------------------------------
+    |
+    | You may want to include a single command class without have to load an
+    | intire folder. Here you may specify which commands classes you wish
+    | to include. Of course the console's kernel will try to load them.
+    |
+    */
+    'add' => [
+        // ..
     ],
 
-    'commands-paths' => [
-      "Local/Commands",
-      "Deploy/Commands"
+    /*
+    |--------------------------------------------------------------------------
+    | Hidden Commands
+    |--------------------------------------------------------------------------
+    |
+    | Your application commands will always be visible on the application list
+    | of commands. But you still may want make them hidden, so Laravel Zero
+    | allows you to make it happen on the list of values provided bellow.
+    |
+    */
+    'hidden' => [
+        NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
+        Symfony\Component\Console\Command\HelpCommand::class,
+        Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+        Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+        Illuminate\Foundation\Console\VendorPublishCommand::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Remove Commands
+    |--------------------------------------------------------------------------
+    |
+    | Do you have a service provider that loads a list of commands that
+    | you don't need? No problem. Laravel Zero allows you to specify
+    | bellow a list of commands that you don't to see in your app.
+    |
+    */
+    'remove' => [
+        // ..
     ],
 ```
 
@@ -125,7 +177,7 @@ You may want to hide *development* commands and set the application context to p
 
 ### App\ServiceProviders
 
-Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.5/providers) for defining concrete
+Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.6/providers) for defining concrete
 implementations. Define them in `app\Providers\AppServiceProvider.php` or create new service providers.
 The `config/app.php` *providers* array contains the registered service providers.
 Below there is an example of a concrete implementation bound to a contract/interface.
@@ -155,14 +207,19 @@ The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero s
 the example below:
 
 ```php
-class CommandTest extends TestCase
-{
-    /** @test */
-    public function it_checks_the_command_output(): void
-    {
-        $this->app->call('command-name');
+use Tests\TestCase;
+use Illuminate\Support\Facades\Artisan;
 
-        $this->assertTrue($this->app->output() === 'Love beautiful code? We do too.');
+class InspiringCommandTest extends TestCase
+{
+    /**
+     * A basic test example.
+     */
+    public function testInspiringCommand(): void
+    {
+        Artisan::call('inspiring');
+
+        $this->assertContains('Leonardo da Vinci', Artisan::output());
     }
 }
 ```
@@ -177,10 +234,10 @@ Running your application *tests*:
 ## Database
 
 Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level.
-As you might have already guessed it, it is Laravel's [Eloquent](https://laravel.com/docs/5.5/eloquent) component that works like a breeze in the Laravel Zero environment too.
+As you might have already guessed it, it is Laravel's [Eloquent](https://laravel.com/docs/5.6/eloquent) component that works like a breeze in the Laravel Zero environment too.
 
 ```bash
-php <your-app-name> install:database
+php <your-app-name> app:install database
 ```
 
 Usage:
@@ -195,7 +252,7 @@ DB::table('users')->insert(
 $users = DB::table('users')->get();
 ```
 
-Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) and [Database Seeding](https://laravel.com/docs/5.5/seeding) features are also included.
+Laravel [Database Migrations](https://laravel.com/docs/5.6/migrations) and [Database Seeding](https://laravel.com/docs/5.6/seeding) features are also included.
 
 <a href="log"></a>
 ## Log
@@ -203,7 +260,7 @@ Laravel [Database Migrations](https://laravel.com/docs/5.5/migrations) and [Data
 Laravel Zero allows you to install a **Log** component.
 
 ```bash
-php <your-app-name> install:log
+php <your-app-name> app:install log
 ```
 
 Usage:
@@ -223,7 +280,7 @@ Log::debug($message);
 
 ## Filesystem
 
-If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.5/filesystem) component by default.
+If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.6/filesystem) component by default.
 
 Note: The root directory is `your-app-name/storage/app`.
 
@@ -237,7 +294,7 @@ Storage::put("reminders.txt", "Task 1");
 <a href="scheduler"></a>
 ## Scheduler
 
-Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.5/scheduling) system of Laravel. To use it, you may need to add the following Cron entry to your server:
+Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.6/scheduling) system of Laravel. To use it, you may need to add the following Cron entry to your server:
 
 ```
 * * * * * php /path-to-your-project/your-app-name schedule:run >> /dev/null 2>&1
@@ -264,7 +321,7 @@ You may want to install the [DotEnv PHP](https://github.com/vlucas/phpdotenv) co
 It is often helpful to have different configuration values based on the environment the application is running in.
 
 ```bash
-php <your-app-name> install:dotenv
+php <your-app-name> app:install dotenv
 ```
 
 The installation will create an empty `.env.example` on your project root. You should rename it manually to `.env`.
