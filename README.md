@@ -14,7 +14,7 @@
 
 <h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
 
-Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your console application. It is a **unofficial** and customized version of Laravel optimized for building command-line applications.
+Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your command-line application. It is a **unofficial** and customized version of Laravel optimized for building command-line applications.
 
 - Built on top of the [Laravel](https://laravel.com) components.
 - Optional installation of [Eloquent](#database).
@@ -83,7 +83,7 @@ Tasks:
   });
 ```
 
-Tasks:
+Menus:
 ```php
   $option = $this->menu('Pizza menu', [
       'Freshly baked muffins',
@@ -306,12 +306,6 @@ You may define all of your scheduled tasks in the `schedule` method of the comma
     {
         $schedule->command(static::class)->everyMinute();
     }
-```
-
-You may want to remove this feature, by modifying `config/app.php`:
-
-```php
-    'with-scheduler' => false,
 ```
 
 <a href="dot-env"></a>
