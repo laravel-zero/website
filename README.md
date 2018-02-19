@@ -17,10 +17,10 @@
 Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your command-line application. It is a **unofficial** and customized version of Laravel optimized for building command-line applications.
 
 - Built on top of the [Laravel](https://laravel.com) components.
-- Optional installation of [Eloquent](#database).
-- Auto detects commands and supports [desktop notifications](#desktop-notifications) on Linux, Windows & MacOS.
+- Optional installation of Laravel [Eloquent](#database), Laravel [Logging](#log) and many others.
+- Supports interactive [menus](#interactive-menus) and [desktop notifications](#desktop-notifications) on Linux, Windows & MacOS.
 - Ships with a [Scheduler](#scheduler) and a [Standalone Compiler](#build-a-standalone-application).
-- Integration with [Collision](https://github.com/nunomaduro/collision) - A Detailed & intuitive error handler.
+- Integration with [Collision](https://github.com/nunomaduro/collision) - Beautiful error reporting
 
 ## Requirements & Installation
 
@@ -65,111 +65,88 @@ Concerning the Command file content, you may want to review the documentation of
                         {--age= : The age of the user}'; // optional.
 ```
 
-<a href="desktop-notifications"></a>
 - The [Command I/O](https://laravel.com/docs/5.6/artisan#command-io) allows you to understand how to capture those input expectations and
 interact the with using commands like `line`, `info`, `comment`, `question` and `error` methods.
 
-Desktop notifications:
-```php
-  $this->notify("Title", "Body", "icon.png");
-```
+<a href="desktop-notifications"></a>
+### Desktop notifications
 
-Tasks:
-```php
-  $this->task("My task 1", function () {
-      return true;
-      // Output:
-      // My task 1: ✔
-  });
-```
+<p align="center">
+    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-desktop-notifier/stable/docs/icon.png" width="50%">
+</p>
 
-Menus:
-```php
-  $option = $this->menu('Pizza menu', [
-      'Freshly baked muffins',
-      'Freshly baked croissants',
-      'Turnovers, crumb cake, cinnamon buns, scones',
-  ])->open();
-
-  $this->info("You have chosen the option number #$option");
-```
-
-The default command of your application the *ListCommand*, that provides a list of commands.
-You may change this behavior by modifying the `config/commands.php`:
 
 ```php
-    /*
-    |--------------------------------------------------------------------------
-    | Default Command
-    |--------------------------------------------------------------------------
-    |
-    | Laravel Zero will always run the command specified below when no command name is
-    | provided. Consider change the default command specifing another command class.
-    | You cannot pass arguments to the default command because they are ignored.
-    |
-    */
-    'default' => NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Load Commands Paths.
-    |--------------------------------------------------------------------------
-    |
-    | This value determines the "paths" that should be loaded by the console's
-    | kernel. Foreach "path" present on the array provided below the kernel
-    | will extract all "Illuminate\Console\Command" based class commands.
-    |
-    */
-    'paths' => [app_path('Commands')],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Add Commands
-    |--------------------------------------------------------------------------
-    |
-    | You may want to include a single command class without have to load an
-    | intire folder. Here you may specify which commands classes you wish
-    | to include. Of course the console's kernel will try to load them.
-    |
-    */
-    'add' => [
-        // ..
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Hidden Commands
-    |--------------------------------------------------------------------------
-    |
-    | Your application commands will always be visible on the application list
-    | of commands. But you still may want make them hidden, so Laravel Zero
-    | allows you to make it happen on the list of values provided bellow.
-    |
-    */
-    'hidden' => [
-        NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
-        Symfony\Component\Console\Command\HelpCommand::class,
-        Illuminate\Console\Scheduling\ScheduleRunCommand::class,
-        Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
-        Illuminate\Foundation\Console\VendorPublishCommand::class,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Remove Commands
-    |--------------------------------------------------------------------------
-    |
-    | Do you have a service provider that loads a list of commands that
-    | you don't need? No problem. Laravel Zero allows you to specify
-    | bellow a list of commands that you don't to see in your app.
-    |
-    */
-    'remove' => [
-        // ..
-    ],
+$this->notify("Hello Web Artisan", "Love beautiful..", "icon.png");
 ```
 
-You may want to hide *development* commands and set the application context to production by modifying `config/app.php`:
+### Tasks
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-console-task/master/docs/example.png" width="50%">
+</p>
+
+```php
+$this->task("Installing Laravel", function () {
+    return true;
+});
+
+$this->task("Doing something else", function () {
+    return false;
+});
+
+```
+
+### Interactive Menus
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-console-menu/master/docs/example.png" width="50%">
+</p>
+
+```php
+$option = $this->menu('Pizza menu', [
+    'Freshly baked muffins',
+    'Freshly baked croissants',
+    'Turnovers, crumb cake, cinnamon buns, scones',
+])->open();
+
+$this->info("You have chosen the option number #$option");
+```
+
+Here’s how you can change the appearance of the menu with a fluent API:
+
+```php
+$this->menu($title, $options)
+    ->setForegroundColour('green')
+    ->setBackgroundColour('black')
+    ->setWidth(200)
+    ->setPadding(10)
+    ->setMargin(5)
+    ->setExitButtonText("Abort")
+    // remove exit button with 
+    // ->disableDefaultItems()
+    ->setUnselectedMarker('❅')
+    ->setSelectedMarker('✏')
+    ->setTitleSeparator('*-')
+    ->addLineBreak('<3', 2)
+    ->addStaticItem('AREA 2')
+    ->open();
+```
+
+### List of commands
+
+The default command of your application contains a list of commands. That list of commands
+can be configurared using `config/commands.php`:
+
+| Property  | Description
+| ------------- | -------------
+| default  | The default application command when no command name is provided.
+| paths  | The "paths" that should be loaded by the console's kernel.
+| add  | Here you may specify which commands classes you wish to include.
+| hidden  | Adds the provided commands, but make them hidden.
+| remove  | Removes the list of commands provided.
+
+Finally, before share your application with the world you should always set the application context to production by modifying `config/app.php`:
 
 ```php
     'production' => true,
@@ -308,7 +285,7 @@ You may define all of your scheduled tasks in the `schedule` method of the comma
     }
 ```
 
-<a href="dot-env"></a>
+<a href="dotenv"></a>
 ## Environment Configuration
 
 You may want to install the [DotEnv PHP](https://github.com/vlucas/phpdotenv) component.
@@ -352,10 +329,13 @@ or on Windows:
 C:\application\path> php builds\<your-build-name>
 ```
 
-## Collision - Console errors
+## Collision - CLI Error Reporting
 
-Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for a similar error handler! Laravel Zero
-ships with [Collision](https://github.com/nunomaduro/collision), giving you a detailed & intuitive interface for errors and exceptions on your console application.
+Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for Collision!
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/nunomaduro/collision/stable/docs/example.png" width="50%">
+</p>
 
 Get more details: [https://github.com/nunomaduro/collision](https://github.com/nunomaduro/collision).
 
@@ -369,7 +349,7 @@ Get more details: [https://github.com/intonate/tinker-zero](https://github.com/i
 
 Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/blob/stable/CONTRIBUTING.md).
 
-You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/blob/stable/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/laravelzero)
+You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/blob/stable/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/enunomaduro)
 
 ## License
 
