@@ -1,4 +1,4 @@
-## About
+# About
 
 <p align="center">
     <img title="Laravel Zero" height="100" src="https://raw.githubusercontent.com/laravel-zero/docs/master/images/logo/laravel-zero-readme.png" />
@@ -14,7 +14,7 @@
 
 <h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
 
-Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your command-line application. It is a **unofficial** and customized version of Laravel optimized for building command-line applications.
+Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your command-line application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
 
 - Built on top of the [Laravel](https://laravel.com) components.
 - Optional installation of Laravel [Eloquent](#database), Laravel [Logging](#log) and many others.
@@ -22,7 +22,7 @@ Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.c
 - Ships with a [Scheduler](#scheduler) and a [Standalone Compiler](#build-a-standalone-application).
 - Integration with [Collision](https://github.com/nunomaduro/collision) - Beautiful error reporting
 
-## Requirements & Installation
+# Requirements & Installation
 
 > **Requires [PHP 7.1.3+](https://php.net/releases/)**
 
@@ -44,9 +44,9 @@ You can rename your application anytime by running the following command in your
 php <your-app-name> app:rename <new-name>
 ```
 
-## Usage
+# Usage
 
-### App\Commands
+## App\Commands
 
 Laravel Zero provides you with a `app\Commands\InspiringCommand.php` command as an example. Create a new command using:
 
@@ -136,7 +136,7 @@ $this->menu($title, $options)
 ### List of commands
 
 The default command of your application contains a list of commands. That list of commands
-can be configurared using `config/commands.php`:
+can be configured using `config/commands.php`:
 
 | Property  | Description
 | ------------- | -------------
@@ -146,13 +146,7 @@ can be configurared using `config/commands.php`:
 | hidden  | Adds the provided commands, but make them hidden.
 | remove  | Removes the list of commands provided.
 
-Finally, before share your application with the world you should always set the application context to production by modifying `config/app.php`:
-
-```php
-    'production' => true,
-```
-
-### App\ServiceProviders
+## App\ServiceProviders
 
 Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.6/providers) for defining concrete
 implementations. Define them in `app\Providers\AppServiceProvider.php` or create new service providers.
@@ -170,7 +164,7 @@ Below there is an example of a concrete implementation bound to a contract/inter
     app(Contract::class) // Returns a Concrete implementation.
 ```
 
-### Config
+## Config
 
 The `config\app.php` file contains your application configuration, there you can create a new configuration `foo => true` and access to the
 that same configuration using `config('app.foo')`.
@@ -178,7 +172,13 @@ that same configuration using `config('app.foo')`.
 All files within the `config` folder are automatically registered as configuration files.
 You can also create specific configuration files, e.g: `app\bar.php` and access it with `config('bar')`.
 
-### Tests
+Finally, before share your application with the world you should always set the application context to production by modifying `config/app.php`:
+
+```php
+    'production' => true,
+```
+
+## Tests
 
 The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero ships with a *Integration* suite that can be used like
 the example below:
@@ -345,12 +345,12 @@ Get more details: [https://github.com/nunomaduro/collision](https://github.com/n
 
 Get more details: [https://github.com/intonate/tinker-zero](https://github.com/intonate/tinker-zero).
 
-## Support & Community
+# Support & Community
 
 Thank you for considering to contribute to Laravel Zero. All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/blob/stable/CONTRIBUTING.md).
 
 You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/blob/stable/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/enunomaduro)
 
-## License
+# License
 
 Laravel Zero is an open-source software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/stable/LICENSE.md).
