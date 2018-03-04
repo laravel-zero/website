@@ -11,7 +11,7 @@
 
 ### PHP
 
-Laravel 5.6 requires PHP 7.1.3 or higher.
+Laravel Zero 5.6 requires PHP 7.1.3 or higher.
 
 ### Updating Dependencies
 
