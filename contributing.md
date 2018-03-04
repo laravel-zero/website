@@ -10,8 +10,8 @@ The Laravel Zero source code is managed on GitHub, and there are repositories fo
 
 - [Laravel Zero Application](https://github.com/laravel-zero/laravel-zero)
 - [Laravel Zero Framework](https://github.com/laravel-zero/framework)
-- [Laravel Installer](https://github.com/laravel-zero/installer)
-- [Laravel Website](https://github.com/laravel-zero/website)
+- [Laravel Zero Installer](https://github.com/laravel-zero/installer)
+- [Laravel Zero Website](https://github.com/laravel-zero/website)
 - [Collision](https://github.com/nunomaduro/collision)
 
 All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/blob/stable/CONTRIBUTING.md).
