@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="carbon.css">
 </head>
 <body>
-<div style="position: absolute; margin-top:10px; margin-left: 10px; width: 130px; z-index: 900">
+<div id="zero-ads" style="margin-left: auto;margin-right: auto;display: table;">
     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=laravelzerocom" id="_carbonads_js"></script>
 </div>
 <div id="app">Loading ...</div>
@@ -32,6 +32,8 @@
         themeColor: '#00B760',
         name: 'Laravel Zero',
         auto2top: true,
+        subMaxLevel: 2,
+        loadSidebar: 'sidebar.md',
         executeScript: true,
         coverpage: 'cover.md',
         plugins: [
@@ -51,15 +53,23 @@
     }
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61404619-3"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-61404619-3');
+    gtag('config', 'UA-61404619-3');
+
+    $(document).ready(function () {
+        $('.sidebar-nav').before($('#zero-ads'));
+    });
 </script>
 </body>
 </html>
