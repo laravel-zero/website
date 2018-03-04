@@ -34,17 +34,17 @@ of this new folder should be a single `.gitignore` with the following content:
 ```
 
 Please remove the files `bootstrap/autoload.php` and `bootstrap/init.php`. And create the file `bootstrap/app.php` with the
-contens of the file: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/bootstrap/app.php](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/bootstrap/app.php).
+contens of the file: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/bootstrap/app.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/bootstrap/app.php).
 
 ### Application entry point
 
-The file that you use to interact with your application should contain now the following content: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/application](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/application).
+The file that you use to interact with your application should contain now the following content: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/application](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/application).
 
 ### Configs
 
 #### The `commands.php` File
 
-You should create a `config/commands.php` with the contents of [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/config/commands.php](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/config/commands.php). Please
+You should create a `config/commands.php` with the contents of [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/config/commands.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/config/commands.php). Please
 customize the created file in order to determine the commands that should appear in your ListCommand.
 
 #### The `app.php` File
@@ -65,8 +65,8 @@ If you have the database component installed, please take in consideration the f
 
 #### Tests
 
-- The file `/tests/TestCase.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/TestCase.php](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/TestCase.php).
-- The file `/tests/CreatesApplication.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/CreatesApplication.php](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/CreatesApplication.php).
+- The file `/tests/TestCase.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/TestCase.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/TestCase.php).
+- The file `/tests/CreatesApplication.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/CreatesApplication.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/CreatesApplication.php).
 
 On every tests, you should replace `$this->app->call()` and `$this->app->output()` by the Artisan facade. Example: `Artisan::call` and `Artisan::output`.
 
