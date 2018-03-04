@@ -44,6 +44,8 @@ You can rename your application anytime by running the following command in your
 php <your-app-name> app:rename <new-name>
 ```
 
+# Upgrade Guide
+
 # Usage
 
 ## App\Commands
@@ -123,7 +125,7 @@ $this->menu($title, $options)
     ->setPadding(10)
     ->setMargin(5)
     ->setExitButtonText("Abort")
-    // remove exit button with 
+    // remove exit button with
     // ->disableDefaultItems()
     ->setUnselectedMarker('❅')
     ->setSelectedMarker('✏')
@@ -329,7 +331,7 @@ or on Windows:
 C:\application\path> php builds\<your-build-name>
 ```
 
-## Collision - CLI Error Reporting
+## Collision
 
 Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for Collision!
 
