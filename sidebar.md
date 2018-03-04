@@ -1,4 +1,4 @@
-* [About](README.md)
+* [About](readme.md)
 * [Installation](installation.md)
 * [Upgrade](upgrade.md)
 * [Usage](usage.md)
