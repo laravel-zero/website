@@ -49,12 +49,12 @@ customize the created file in order to determine the commands that should appear
 
 #### The `app.php` File
 
-- App config with-scheduler is no longer available. You should use `config/commands.php` for it.
-- App config default-command is no longer available. You should use `config/commands.php` for it.
-- App config commands-paths is no longer available. You should use `config/commands.php` for it.
-- App config commands is no longer available. You should use `config/commands.php` for it.
+- App config `with-scheduler` is no longer available. You should use `config/commands.php` for it.
+- App config `default-command` is no longer available. You should use `config/commands.php` for it.
+- App config `commands-paths` is no longer available. You should use `config/commands.php` for it.
+- App config `commands` is no longer available. You should use `config/commands.php` for it.
 
-The value version on config/app.php should be updated to `app('git.version')`.
+The value version on `config/app.php` should be updated to `app('git.version')`.
 
 #### The `database.php` File
 
