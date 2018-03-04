@@ -65,7 +65,7 @@ If you have the database component installed, please take in consideration the f
 
 #### Tests
 
-- The file `/tests/TestCase.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/TestCase.php](https://github.com/laravel-zero/laravel-zero/blob/blob/tests/TestCase.php).
+- The file `/tests/TestCase.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/TestCase.php](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/TestCase.php).
 - The file `/tests/CreatesApplication.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/CreatesApplication.php](https://github.com/laravel-zero/laravel-zero/blob/v5.5.6/tests/CreatesApplication.php).
 
 On every tests, you should replace `$this->app->call()` and `$this->app->output()` by the Artisan facade. Example: `Artisan::call` and `Artisan::output`.
