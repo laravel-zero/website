@@ -58,7 +58,7 @@ The value version on `config/app.php` should be updated to `app('git.version')`.
 
 #### The `database.php` File
 
-If you have the database component installed, please take in consideration the following updates:
+If you have the database component installed, please take into consideration the following updates:
 
 - Database config with-migrations is no longer available. You should use config/commands.php for it.
 - Database config with-seeds is no longer available. You should use config/commands.php for it.
