@@ -1,0 +1,12 @@
+{
+    "name": "laravel-zero/website",
+    "type": "website",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nuno Maduro",
+            "email": "enunomaduro@gmail.com"
+        }
+    ],
+    "require": {}
+}
