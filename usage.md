@@ -22,8 +22,8 @@ php <your-app-name> make:command <NewCommand>
 
 Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
 
-- The [Defining Input Expectations](https://laravel.com/docs/5.6/artisan#defining-input-expectations) section allows you to understand
- how to gather input from the user through arguments or options. As example:
+- The [Defining Input Expectations](https://laravel.com/docs/5.6/artisan#defining-input-expectations) section can help you understand
+ how to gather input from the user through arguments or options. For example:
 
 ```php
  protected $signature = 'user:create
@@ -31,8 +31,8 @@ Concerning the Command file content, you may want to review the documentation of
                         {--age= : The age of the user}'; // optional.
 ```
 
-- The [Command I/O](https://laravel.com/docs/5.6/artisan#command-io) allows you to understand how to capture those input expectations and
-interact the with using commands like `line`, `info`, `comment`, `question` and `error` methods.
+- The [Command I/O](https://laravel.com/docs/5.6/artisan#command-io) can help you to understand how to capture those input expectations and
+interact with the user using commands like `line`, `info`, `comment`, `question` and `error` methods.
 
 <a href="desktop-notifications"></a>
 ### Desktop notifications
@@ -132,13 +132,12 @@ Below there is an example of a concrete implementation bound to a contract/inter
 
 ## Config
 
-The `config\app.php` file contains your application configuration, there you can create a new configuration `foo => true` and access to the
-that same configuration using `config('app.foo')`.
+The `config\app.php` file contains your application configuration. In this file you can create new configuration settings, such as `foo => true`. You can then access the configuration using `config('app.foo')`.
 
-All files within the `config` folder are automatically registered as configuration files.
+All files in the `config` folder are automatically registered as configuration files.
 You can also create specific configuration files, e.g: `app\bar.php` and access it with `config('bar')`.
 
-Finally, before share your application with the world you should always set the application context to production by modifying `config/app.php`:
+Finally, before you distribute your application to the world, you should always set the application context to production by modifying `config/app.php`:
 
 ```php
     'production' => true,
@@ -146,8 +145,7 @@ Finally, before share your application with the world you should always set the 
 
 ## Tests
 
-The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero ships with a *Integration* suite that can be used like
-the example below:
+The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero ships with an *Integration* suite that can be used as follows:
 
 ```php
 use Tests\TestCase;
@@ -176,8 +174,7 @@ Running your application *tests*:
 <a href="database"></a>
 ## Database
 
-Laravel Zero allows you to install a **Database** component out of the box to push your console app to the next level.
-As you might have already guessed it, it is Laravel's [Eloquent](https://laravel.com/docs/5.6/eloquent) component that works like a breeze in the Laravel Zero environment too.
+If you want to push your console app to the next level, Laravel Zero allows you to install a **Database** component out of the box! As you might have already guessed, it is Laravel's [Eloquent](https://laravel.com/docs/5.6/eloquent) component that works like a breeze in the Laravel Zero environment too.
 
 ```bash
 php <your-app-name> app:install database
@@ -223,7 +220,7 @@ Log::debug($message);
 
 ## Filesystem
 
-If you want to move files in your system, or to multiple providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.6/filesystem) component by default.
+If you want to move files in your system, or to different providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.6/filesystem) component by default.
 
 Note: The root directory is `your-app-name/storage/app`.
 
@@ -237,7 +234,7 @@ Storage::put("reminders.txt", "Task 1");
 <a href="scheduler"></a>
 ## Scheduler
 
-Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.6/scheduling) system of Laravel. To use it, you may need to add the following Cron entry to your server:
+Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.6/scheduling) system of Laravel. To use the scheduler, you need to periodically execute your application. For example, you may want to add the following Cron entry to your server:
 
 ```
 * * * * * php /path-to-your-project/your-app-name schedule:run >> /dev/null 2>&1
@@ -277,7 +274,7 @@ echo env('SECRET_KEY') // outputs 234567
 <a href="build-a-standalone-application"></a>
 ## Building a standalone application
 
-Your Laravel Zero project, by default, allows you to build a standalone PHAR archive to ease the deployment or the distribution of your project.
+Your Laravel Zero project, by default, allows you to build a standalone PHAR archive to ease the deployment or distribution of your project.
 
 ```bash
 php your-app-name app:build <your-build-name>
