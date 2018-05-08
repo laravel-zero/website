@@ -271,6 +271,43 @@ You can access those variables using the `env()` helper:
 echo env('SECRET_KEY') // outputs 234567
 ```
 
+<a href="console-dusk"></a>
+## Console Dusk
+
+The Console Dusk allows the usage of Laravel Dusk in Artisan commands.
+
+```bash
+php <your-app-name> app:install console-dusk
+```
+
+Usage:
+
+```php
+class VisitLaravelZeroCommand extends Command
+{
+    /**
+     * Execute the console command.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit('http://laravel-zero.com')
+                ->assertSee('Collision');
+        });
+    }
+}
+```
+
+Output example:
+
+<p align="center">
+    <img src="https://github.com/nunomaduro/laravel-console-dusk/blob/master/docs/example.gif?raw=true">
+</p>
+
+Get more details: [https://github.com/nunomaduro/laravel-console-dusk](https://github.com/nunomaduro/laravel-console-dusk).
+
 <a href="build-a-standalone-application"></a>
 ## Building a standalone application
 
