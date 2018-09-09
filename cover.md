@@ -1,5 +1,5 @@
 <img src="logo.png" width="50%">
-# Laravel Zero <strong>5.6</strong>
+# Laravel Zero <strong>5.7</strong>
 
 > Micro-framework for console/command-line applications
 

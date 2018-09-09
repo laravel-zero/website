@@ -1,8 +1,99 @@
 # Upgrade Guide
 
+- [Upgrading To 5.7 From 5.6](#upgrade-5.7.0)
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
 
-<a name="upgrade-5.6"></a>
+<a name="upgrade-5.7.0"></a>
+## Upgrading To 5.7 From 5.6
+
+#### Estimated Upgrade Time: 2 - 5 Minutes
+
+> We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
+
+### Updating Dependencies
+
+Update your `laravel-zero/framework` dependency to `5.7.*` in your `composer.json` file.
+
+Of course, don't forget to examine any 3rd party packages consumed by your application and verify you are using the proper version for Laravel Zero 5.7 support.
+
+#### If you are using testing
+
+Add the `mockery/mockery` package with version ^1.0 to the require-dev section of your composer.json file.
+
+Update the contents of the following files:
+
+- tests/CreatesApplication.php:
+
+```php
+<?php
+
+namespace Tests;
+
+use Illuminate\Contracts\Console\Kernel;
+
+trait CreatesApplication
+{
+    /**
+     * Creates the application.
+     *
+     * @return \Illuminate\Foundation\Application
+     */
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Kernel::class)->bootstrap();
+
+        return $app;
+    }
+}
+```
+
+- tests/TestCase.php:
+
+```php
+<?php
+
+namespace Tests;
+
+use LaravelZero\Framework\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
+{
+    use CreatesApplication;
+}
+```
+
+### If you are using the build feature
+
+The internal behavior of build feature has changed. We are now using `humbug/box` to provide fast application bundling.
+
+You should create a new file `box.json` on the root folder of your application with the following content:
+
+```json
+{
+    "chmod": "0755",
+    "directories": [
+        "app",
+        "bootstrap",
+        "config",
+        "vendor"
+    ],
+    "files": [
+        "composer.json"
+    ],
+    "exclude-composer-files": false,
+    "compression": "GZ",
+    "compactors": [
+        "Herrera\\Box\\Compactor\\Php",
+        "Herrera\\Box\\Compactor\\Json"
+    ]
+}
+```
+
+The option app:build `with-dev` option no longer exists, and the config/app.php `structure` parameter also no longer exists. In order to configure your build, you should configure the `box.json` file. Check [github.com/humbug/box/blob/master/doc/configuration.md](https://github.com/humbug/box/blob/master/doc/configuration.md) for more details.
+
+<a name="upgrade-5.6.0"></a>
 ## Upgrading To 5.6 From 4.0
 
 #### Estimated Upgrade Time: 5 - 15 Minutes
@@ -34,7 +125,7 @@ of this new folder should be a single `.gitignore` with the following content:
 ```
 
 Please remove the files `bootstrap/autoload.php` and `bootstrap/init.php`. And create the file `bootstrap/app.php` with the
-contens of the file: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/bootstrap/app.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/bootstrap/app.php).
+contents of the file: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/bootstrap/app.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/bootstrap/app.php).
 
 ### Application entry point
 
@@ -65,8 +156,8 @@ If you have the database component installed, please take into consideration the
 
 #### Tests
 
-- The file `/tests/TestCase.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/TestCase.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/TestCase.php).
-- The file `/tests/CreatesApplication.php` should now contains the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/CreatesApplication.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/CreatesApplication.php).
+- The file `/tests/TestCase.php` should now contain the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/TestCase.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/TestCase.php).
+- The file `/tests/CreatesApplication.php` should now contain the following contents: [https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/CreatesApplication.php](https://github.com/laravel-zero/laravel-zero/blob/v5.6.6/tests/CreatesApplication.php).
 
 On every tests, you should replace `$this->app->call()` and `$this->app->output()` by the Artisan facade. Example: `Artisan::call` and `Artisan::output`.
 

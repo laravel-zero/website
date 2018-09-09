@@ -14,7 +14,7 @@ php <your-app-name> app:rename <new-name>
 
 ## App\Commands
 
-Laravel Zero provides you with a `app\Commands\InspiringCommand.php` command as an example. Create a new command using:
+Laravel Zero provides you with an `app\Commands\InspiringCommand.php` command as an example. Create a new command using:
 
 ```bash
 php <your-app-name> make:command <NewCommand>
@@ -22,7 +22,7 @@ php <your-app-name> make:command <NewCommand>
 
 Concerning the Command file content, you may want to review the documentation of the Artisan Console component:
 
-- The [Defining Input Expectations](https://laravel.com/docs/5.6/artisan#defining-input-expectations) section can help you understand
+- The [Defining Input Expectations](https://laravel.com/docs/5.7/artisan#defining-input-expectations) section can help you understand
  how to gather input from the user through arguments or options. For example:
 
 ```php
@@ -31,7 +31,7 @@ Concerning the Command file content, you may want to review the documentation of
                         {--age= : The age of the user}'; // optional.
 ```
 
-- The [Command I/O](https://laravel.com/docs/5.6/artisan#command-io) can help you to understand how to capture those input expectations and
+- The [Command I/O](https://laravel.com/docs/5.7/artisan#command-io) can help you to understand how to capture those input expectations and
 interact with the user using commands like `line`, `info`, `comment`, `question` and `error` methods.
 
 <a href="desktop-notifications"></a>
@@ -114,7 +114,7 @@ can be configured using `config/commands.php`:
 
 ## App\ServiceProviders
 
-Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.6/providers) for defining concrete
+Laravel Zero recommends the usage of [Laravel Service Providers](https://laravel.com/docs/5.7/providers) for defining concrete
 implementations. Define them in `app\Providers\AppServiceProvider.php` or create new service providers.
 The `config/app.php` *providers* array contains the registered service providers.
 Below there is an example of a concrete implementation bound to a contract/interface.
@@ -132,7 +132,7 @@ Below there is an example of a concrete implementation bound to a contract/inter
 
 ## Config
 
-The `config\app.php` file contains your application configuration. In this file you can create new configuration settings, such as `foo => true`. You can then access the configuration using `config('app.foo')`.
+The `config\app.php` file contains your application configuration. In this file, you can create new configuration settings, such as `foo => true`. You can then access the configuration using `config('app.foo')`.
 
 All files in the `config` folder are automatically registered as configuration files.
 You can also create specific configuration files, e.g: `app\bar.php` and access it with `config('bar')`.
@@ -149,18 +149,19 @@ The `tests` folder contains your `phpunit` tests. By default, the Laravel Zero s
 
 ```php
 use Tests\TestCase;
-use Illuminate\Support\Facades\Artisan;
 
 class InspiringCommandTest extends TestCase
 {
     /**
      * A basic test example.
+     *
+     * @return void
      */
-    public function testInspiringCommand(): void
+    public function testInspiringCommand()
     {
-        Artisan::call('inspiring');
-
-        $this->assertContains('Leonardo da Vinci', Artisan::output());
+        $this->artisan('inspiring')
+             ->expectsOutput('Simplicity is the ultimate sophistication.')
+             ->assertExitCode(0);
     }
 }
 ```
@@ -174,7 +175,7 @@ Running your application *tests*:
 <a href="database"></a>
 ## Database
 
-If you want to push your console app to the next level, Laravel Zero allows you to install a **Database** component out of the box! As you might have already guessed, it is Laravel's [Eloquent](https://laravel.com/docs/5.6/eloquent) component that works like a breeze in the Laravel Zero environment too.
+If you want to push your console app to the next level, Laravel Zero allows you to install a **Database** component out of the box! As you might have already guessed, it is Laravel's [Eloquent](https://laravel.com/docs/5.7/eloquent) component that works like a breeze in the Laravel Zero environment too.
 
 ```bash
 php <your-app-name> app:install database
@@ -183,7 +184,7 @@ php <your-app-name> app:install database
 Usage:
 
 ```php
-use Illuminate\Support\Facades\DB;
+use DB;
 
 DB::table('users')->insert(
     ['email' => 'enunomaduro@gmail.com']
@@ -192,7 +193,7 @@ DB::table('users')->insert(
 $users = DB::table('users')->get();
 ```
 
-Laravel [Database Migrations](https://laravel.com/docs/5.6/migrations) and [Database Seeding](https://laravel.com/docs/5.6/seeding) features are also included.
+Laravel [Database Migrations](https://laravel.com/docs/5.7/migrations) and [Database Seeding](https://laravel.com/docs/5.7/seeding) features are also included.
 
 <a href="log"></a>
 ## Log
@@ -206,7 +207,7 @@ php <your-app-name> app:install log
 Usage:
 
 ```php
-use Illuminate\Support\Facades\Log;
+use Log;
 
 Log::emergency($message);
 Log::alert($message);
@@ -220,21 +221,20 @@ Log::debug($message);
 
 ## Filesystem
 
-If you want to move files in your system, or to different providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.6/filesystem) component by default.
+If you want to move files in your system, or to different providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.7/filesystem) component by default.
 
 Note: The root directory is `your-app-name/storage/app`.
 
 ```php
-use Illuminate\Support\Facades\Storage;
+use Storage;
 
 Storage::put("reminders.txt", "Task 1");
-
 ```
 
 <a href="scheduler"></a>
 ## Scheduler
 
-Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.6/scheduling) system of Laravel. To use the scheduler, you need to periodically execute your application. For example, you may want to add the following Cron entry to your server:
+Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.7/scheduling) system of Laravel. To use the scheduler, you need to periodically execute your application. For example, you may want to add the following Cron entry to your server:
 
 ```
 * * * * * php /path-to-your-project/your-app-name schedule:run >> /dev/null 2>&1
@@ -242,7 +242,7 @@ Laravel Zero ships with the [Task Scheduling](https://laravel.com/docs/5.6/sched
 
 You may define all of your scheduled tasks in the `schedule` method of the command:
 ```php
-    public function schedule(Schedule $schedule): void
+    public function schedule(Schedule $schedule)
     {
         $schedule->command(static::class)->everyMinute();
     }
@@ -288,7 +288,7 @@ class VisitLaravelZeroCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
+     * @return mixed
      */
     public function handle()
     {
@@ -328,6 +328,10 @@ or on Windows:
 ```bash
 C:\application\path> php builds\<your-build-name>
 ```
+
+We use `humbug/box` to provide fast application bundling. In order to configure your build, you should take a look at the file `box.json`.
+
+Please check the box documentation to understand all options: [github.com/humbug/box/blob/master/doc/configuration.md](https://github.com/humbug/box/blob/master/doc/configuration.md).
 
 ## Collision
 
