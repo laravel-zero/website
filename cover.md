@@ -1,4 +1,4 @@
-<img src="logo.png" width="50%">
+<img src="cover.png" width="50%">
 # Laravel Zero <strong>5.7</strong>
 
 > Micro-framework for console/command-line applications
@@ -10,3 +10,4 @@
 [GitHub](https://github.com/laravel-zero/laravel-zero)
 [Demo](https://www.youtube.com/watch?v=6H5eCphgqVc)
 [Get Started](/README)
+
