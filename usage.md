@@ -343,6 +343,10 @@ Love [Whoops](http://filp.github.io/whoops/) on Laravel? Get ready for Collision
 
 Get more details: [https://github.com/nunomaduro/collision](https://github.com/nunomaduro/collision).
 
+### Custom Exceptions
+
+If you want to throw exceptions in your application for the user to see, you need to implement the `Symfony\Component\Console\Exception\ExceptionInterface`. This allows the exception to bypass the Collision exception handler and display the message of the exception to the user.
+
 ## Tinker
 
 [Laravel Tinker](https://github.com/laravel/tinker) is a powerful REPL for Laravel. [Jorge González](https://github.com/scrubmx) made it available for Laravel Zero.
