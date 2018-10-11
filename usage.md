@@ -219,6 +219,22 @@ Log::info($message);
 Log::debug($message);
 ```
 
+<a href="logo"></a>
+## Logo
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/laravel-zero/website/master/img/logo_component.png" width="50%">
+</p>
+
+
+Laravel Zero allows you to install a **Logo** component.
+
+```bash
+php <your-app-name> app:install logo
+```
+
+This command will install dependencies needed and publishes a config file called `logo.php`. Your app name will now be displayed as an ASCII logo!
+
 ## Filesystem
 
 If you want to move files in your system, or to different providers like AwsS3 and Dropbox, Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.7/filesystem) component by default.
