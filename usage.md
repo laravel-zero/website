@@ -223,7 +223,7 @@ Log::debug($message);
 ## Logo
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/laravel-zero/website/master/img/logo_component.png" width="50%">
+    <img src="https://raw.githubusercontent.com/laravel-zero/website/gh-pages/img/logo_component.png" width="50%">
 </p>
 
 
