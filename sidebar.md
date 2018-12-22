@@ -1,5 +1,0 @@
-* [About](README.md)
-* [Installation](installation.md)
-* [Upgrade](upgrade.md)
-* [Usage](usage.md)
-* [Contributing](contributing.md)
