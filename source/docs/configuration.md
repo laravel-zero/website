@@ -14,7 +14,7 @@ you can access it using `config('bar')`.
 The configuration files `config/app.php` and `config/commands.php` are used internally by the
 framework, and can not be removed.
 
-## Configuration file `config/app.php`
+The `config/app.php` contains information related to your application:
 
 | Property  | Description
 | ------------- | -------------
@@ -22,8 +22,6 @@ framework, and can not be removed.
 | version  | This value determines the "version" your application is currently running in.
 | production  | This value determines the "environment" your application is currently running in.
 | providers  | he service providers listed here will be automatically loaded on your application.
-
-## Configuration file `config/commands.php`
 
 The default command of your application contains a list of commands. That list of commands
 can be configured using `config/commands.php`:

@@ -59,8 +59,6 @@ Of course, you can always create a new command using the `make:command` Artisan 
 php <your-app-name> make:command <NewCommand>
 ```
 
-## `signature` property
-
 The `signature` property should contain the definition of the input expectations. This is the place
 to define how to gather input from the user through arguments or options:
 ```php
@@ -72,12 +70,8 @@ to define how to gather input from the user through arguments or options:
 For more information, check out the [Defining Input Expectations](https://laravel.com/docs/5.7/artisan#defining-input-expectations)
 on the Laravel Documentation.
 
-## `description` property
-
 The `description` property should contain one line description of your command's job. Later, this description is
 used on the application list of commands.
-
-## `handle` method
 
 The `handle` method is the place where the logic of your command should be. This method will be called when your
 command is executed. Note that we are able to inject any dependencies we need into the `handle` method:
@@ -90,11 +84,9 @@ command is executed. Note that we are able to inject any dependencies we need in
     }
 ```
 
-- The [Command I/O](https://laravel.com/docs/artisan#command-io) topic in the Laravel Documentation, can help
+The [Command I/O](https://laravel.com/docs/artisan#command-io) topic in the Laravel Documentation, can help
 you to understand how to capture those input expectations and interact with the user using commands
 like `line`, `info`, `comment`, `question` and `error` methods.
-
-## `schedule` method
 
 The `schedule` method allows to define the command's schedule. Please head over to the
 topic [Task Scheduling](/docs/task-scheduling) to find more information about this method.

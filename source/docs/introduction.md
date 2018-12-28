@@ -18,7 +18,7 @@ Laravel Zero is **100% open source**, so you’re free to dig through the source
 
 Let's get you started:
 - [Installation](/docs/installation)
-- [Usage](/docs/usage)
+- [Usage](docs/commands/)
 - [Add-ons](/docs/add-ons)
 - [Upgrade](/docs/upgrade)
 - [Contributing](/docs/contributing)

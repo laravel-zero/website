@@ -17,18 +17,20 @@ return [
         ],
     ],
     'Add-ons' => [
-        'url' => 'docs/add-ons',
+        'url' => 'docs/create-a-new-command',
         'children' => [
             'Create a new command' => 'docs/create-a-new-command',
-            'Filesystem' => 'docs/Filesystem',
+            'Database' => 'docs/database',
+            'Logging' => 'docs/logging',
+            'Filesystem' => 'docs/filesystem',
             'Run tasks' => 'docs/run-tasks',
+            'Create a logo' => 'docs/create-a-logo',
             'Build interactive menus' => 'docs/build-interactive-menus',
             'Send desktop notifications' => 'docs/send-desktop-notifications',
             'Web Browser Automation' => 'docs/web-browser-automation',
             'Environment Variables' => 'docs/environment-variables',
             'Build a standalone application' => 'docs/build-a-standalone-application',
             'Tinker REPL' => 'docs/tinker-repl',
-            'Custom 404 Page' => 'docs/custom-404-page',
         ],
     ],
     'Upgrade' => [
