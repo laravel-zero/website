@@ -17,9 +17,8 @@ return [
         ],
     ],
     'Add-ons' => [
-        'url' => 'docs/create-a-new-command',
+        'url' => 'docs/database',
         'children' => [
-            'Create a new command' => 'docs/create-a-new-command',
             'Database' => 'docs/database',
             'Logging' => 'docs/logging',
             'Filesystem' => 'docs/filesystem',
