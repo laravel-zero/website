@@ -2,7 +2,7 @@
 
 return [
     'baseUrl' => '',
-    'production' => true,
+    'production' => false,
     'siteName' => 'Laravel Zero',
     'siteDescription' => 'Micro-framework for console applications',
 
