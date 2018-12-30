@@ -24,7 +24,7 @@
 
     <div class="flex flex-col -mx-2 items-center justify-center md:items-start md:flex-row md:-mx-4 md:justify-between">
         <div class="flex flex-col w-full mb-8 mx-3 px-2 md:w-1/3">
-            <img src="/assets/img/icon-terminal.svg" class="h-12 w-12" alt="window icon">
+            <img src="/assets/img/icon-stack.svg" class="h-12 w-12" alt="stack icon">
 
             <h3 id="intro-laravel" class="text-2xl text-blue-darkest mb-0">Highly modular <br>Framework design</h3>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="flex flex-col w-full mb-8 mx-3 px-2 md:w-1/3">
-            <img src="/assets/img/icon-window.svg" class="h-12 w-12" alt="terminal icon">
+            <img src="/assets/img/icon-terminal.svg" class="h-12 w-12" alt="terminal icon">
 
             <h3 id="intro-markdown" class="text-2xl text-blue-darkest mb-0">Write powerful<br>Console applications</h3>
 
@@ -40,7 +40,7 @@
         </div>
 
         <div class="flex flex-col w-full mx-3 px-2 md:w-1/3">
-            <img src="/assets/img/icon-stack.svg" class="h-12 w-12" alt="stack icon">
+            <img src="/assets/img/icon-window.svg" class="h-12 w-12" alt="window icon">
 
             <h3 id="intro-mix" class="text-2xl text-blue-darkest mb-0">For Artisans<br>100% Open Source</h3>
 
