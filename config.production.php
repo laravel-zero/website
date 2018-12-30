@@ -5,6 +5,6 @@ return [
     'production' => true,
 
     // DocSearch credentials
-    'docsearchApiKey' => '',
-    'docsearchIndexName' => '',
+    'docsearchApiKey' => 'ac0bd380724d207df97763a999031e82',
+    'docsearchIndexName' => 'laravel-zero',
 ];

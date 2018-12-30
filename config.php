@@ -7,8 +7,8 @@ return [
     'siteDescription' => 'Micro-framework for console applications',
 
     // Algolia DocSearch credentials
-    'docsearchApiKey' => '',
-    'docsearchIndexName' => '',
+    'docsearchApiKey' => 'ac0bd380724d207df97763a999031e82',
+    'docsearchIndexName' => 'laravel-zero',
 
     // navigation menu
     'navigation' => require_once('navigation.php'),
