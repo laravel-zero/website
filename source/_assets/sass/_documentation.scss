@@ -1,1 +1,17 @@
 // Add your custom styles here
+
+main div.w-full table {
+  @apply .w-full;
+}
+
+td, th {
+  @apply .border .py-1 .px-3;
+}
+
+td:first-child {
+  @apply .w-1/6;
+}
+
+td:last-child {
+  @apply .italic;
+}
