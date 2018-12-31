@@ -51,7 +51,7 @@ class InspiringCommandTest extends TestCase
      *
      * @return void
      */
-public function testMigrationCommand()
+    public function testMigrationCommand()
     {
         $this->artisan('migrate', ['--seed' => true]);
         
