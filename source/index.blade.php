@@ -11,7 +11,7 @@
             <div class="flex my-10">
                 <a href="/docs/introduction" title="{{ $page->siteName }} getting started" class="bg-blue hover:bg-blue-dark font-normal text-white hover:text-white rounded mr-4 py-2 px-6">Get Started</a>
 
-                <a href="https://github.com/laravel-zero" title="Source Code" class="bg-grey-light hover:bg-grey-dark text-blue-darkest font-normal hover:text-white rounded py-2 px-6">Source Code</a>
+                <a href="https://github.com/laravel-zero/laravel-zero" title="Source Code" class="bg-grey-light hover:bg-grey-dark text-blue-darkest font-normal hover:text-white rounded py-2 px-6">Source Code</a>
             </div>
         </div>
 
