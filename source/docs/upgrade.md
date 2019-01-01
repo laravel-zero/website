@@ -121,7 +121,7 @@ Of course, don't forget to examine any 3rd party packages consumed by your appli
 
 You must update the `phpunit/phpunit` dependency of your application to `~7.0`.
 
-### Boostrap
+### Bootstrap
 
 You must create the bootstrap/cache folder to hold application services cache. The content
 of this new folder should be a single `.gitignore` with the following content:
