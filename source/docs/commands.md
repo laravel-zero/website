@@ -84,7 +84,7 @@ command is executed. Note that we are able to inject any dependencies we need in
     }
 ```
 
-The [Command I/O](https://laravel.com/docs/artisan#command-io) topic in the Laravel Documentation, can help
+The [Command I/O](https://laravel.com/docs/latest/artisan#command-io) topic in the Laravel Documentation, can help
 you to understand how to capture those input expectations and interact with the user using commands
 like `line`, `info`, `comment`, `question` and `error` methods.
 
