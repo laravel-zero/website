@@ -102,7 +102,7 @@ The `$dontReport` property of the exception handler contains an array of excepti
     ];
 ```
 
-This however results in `RuntimeException` not beoign reported at all. More fine grained control can be achieved by updating the `report` function.
+This however results in `RuntimeException` not being reported at all. More fine grained control can be achieved by updating the `report` function.
 
 The following would prevent the *Not enough arguments* exception to be reported, but any other `RuntimeException` would still be reported.
 
