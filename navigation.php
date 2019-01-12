@@ -16,6 +16,9 @@ return [
             'Testing' => 'docs/testing',
         ],
     ],
+    'Exception handler' => [
+        'url' => 'docs/exception-handler',
+    ],
     'Add-ons' => [
         'url' => 'docs/database',
         'children' => [
