@@ -7,16 +7,18 @@ section: content
 
 # Build interactive menus
 
-Interactive menus in console applications are very powerful - They
+Interactive menus in console applications are very powerful. They
 provide a simple interface that requires little interaction. With Laravel
-Zero, you can use the `menu` to create beautiful menus:
+Zero, you can use the `menu` method to create beautiful menus:
 
-Using menus in the console may sound silly, but is fantastic! The users
-can use
+Using menus in the console may sound silly, but is fantastic! Your users 
+don't need to type the number corresponding to their choice any more. They
+can just use the arrows on their keyboard to make their selection!
 
-are used most of the times for performing tasks and giving output
-of the result of task is important to the end-user. With Laravel Zero, you can use
-the `task` method to return a result from the task code:
+#### Example
+
+Create your first menu by copy pasting the code below in your commands 
+`handle` function.
 
 ```php
 $option = $this->menu('Pizza menu', [
@@ -28,12 +30,17 @@ $option = $this->menu('Pizza menu', [
 $this->info("You have chosen the option number #$option");
 ```
 
-The code above will output content similar to:
-<p align="center">
-    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-console-menu/master/docs/example.png" width="50%">
+When you now run your command your output should be similar to this 
+image:
+
+<p align="center" class="my-0">
+    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-console-menu/master/docs/example.png" width="70%">
 </p>
 
-Here’s how you can change the appearance of the menu with a fluent API:
+<h4 class="mt-0">Changing the appearance</h4>
+
+The appearance of the menu can be set with a fluent API. What if we like 
+a green font on a black background? The code below shows you how to do just that and some extras.
 
 ```php
 $this->menu($title, $options)
@@ -53,4 +60,6 @@ $this->menu($title, $options)
     ->open();
 ```
 
-Get more details: [https://github.com/nunomaduro/laravel-console-menu](https://github.com/nunomaduro/laravel-console-menu).
+> Behind the scenes, the `menu` method uses the 
+[`nunomaduro/laravel-console-menu`](https://github.com/nunomaduro/laravel-console-menu) 
+package. You can find more details on how to use the menu method there.
