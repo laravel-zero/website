@@ -7,8 +7,27 @@ section: content
 
 # Upgrade Guide
 
+- [Upgrading To 5.8 From 5.7](#upgrade-5.8.0)
 - [Upgrading To 5.7 From 5.6](#upgrade-5.7.0)
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
+
+<a name="upgrade-5.8.0"></a>
+## Upgrading To 5.8 From 5.7
+
+#### Estimated Upgrade Time: 2 - 5 Minutes
+
+> We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
+
+### Updating Dependencies
+
+Update your `laravel-zero/framework` dependency to `5.8.*` in your `composer.json` file.
+
+#### If you are using the mene method
+
+The `command::menu()` method got removed from the core of Laravel Zero to an optional component. Using the `app:install` Artisan command you can install the `menu` component again:
+```bash
+php <your-app-name> app:install menu
+```
 
 <a name="upgrade-5.7.0"></a>
 ## Upgrading To 5.7 From 5.6
