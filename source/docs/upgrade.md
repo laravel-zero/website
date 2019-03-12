@@ -22,7 +22,7 @@ section: content
 
 Update your `laravel-zero/framework` dependency to `5.8.*` in your `composer.json` file.
 
-#### If you are using the mene method
+#### If you are using the menu method
 
 The `command::menu()` method got removed from the core of Laravel Zero to an optional component. Using the `app:install` Artisan command you can install the `menu` component again:
 ```bash
