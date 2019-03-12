@@ -29,6 +29,10 @@ The `command::menu()` method got removed from the core of Laravel Zero to an opt
 php <your-app-name> app:install menu
 ```
 
+#### If you are using the dotenv addon
+
+Update your `vlucas/phpdotenv` dependency to `^3.0` in your `composer.json` file.
+
 <a name="upgrade-5.7.0"></a>
 ## Upgrading To 5.7 From 5.6
 
