@@ -27,3 +27,12 @@ You can access those variables using the `env()` helper:
 ```php
 echo env('SECRET_KEY') // outputs 234567
 ```
+
+## After building your application
+
+After your application is built, you may create a `.env` file, in the same directory as your build.
+```
+.
+├── .env
+└── application
+```
