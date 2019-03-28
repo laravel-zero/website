@@ -28,7 +28,7 @@
 
             <h3 id="intro-laravel" class="text-2xl text-blue-darkest mb-0">Highly modular <br>Framework design</h3>
 
-            <p>Laravel Zero is lightweight and modular micro-framework for developing fast and powerful console applications. Built on top of the Laravel components</p>
+            <p>Laravel Zero is a lightweight and modular micro-framework for developing fast and powerful console applications. Built on top of the Laravel components.</p>
         </div>
 
         <div class="flex flex-col w-full mb-8 mx-3 px-2 md:w-1/3">
@@ -36,7 +36,7 @@
 
             <h3 id="intro-markdown" class="text-2xl text-blue-darkest mb-0">Write powerful<br>Console applications</h3>
 
-            <p>Laravel Zero have a simple and powerful syntax that enables developers to build very complex applications far more quickly than with any previous framework.</p>
+            <p>Laravel Zero has a simple and powerful syntax that enables developers to build very complex applications far more quickly than with any previous framework.</p>
         </div>
 
         <div class="flex flex-col w-full mx-3 px-2 md:w-1/3">
