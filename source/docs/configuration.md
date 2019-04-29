@@ -8,7 +8,7 @@ section: content
 # Configuration
 
 The `config` folder should contain your application config files. Files in this folder
-are automatically registered as configuration files. As example, if you create an `app\bar.php`,
+are automatically registered as configuration files. As example, if you create an `config/bar.php`,
 you can access it using `config('bar')`.
 
 The configuration files `config/app.php` and `config/commands.php` are used internally by the
