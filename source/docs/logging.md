@@ -30,3 +30,25 @@ Log::debug($message);
 ```
 
 Get more details: [laravel.com/docs/logging](https://laravel.com/docs/logging).
+
+
+## Note on PHAR build
+
+When your App built into the PHAR standalone file, the underneath Laravel helper `storage_path()` used to determine where to store log files (if on a filesystem, see `/config/logging.php` in your project), points inside the PHAR package; which is by default read-only.
+
+For such an occasion, we suggest to reconfigure the path in your `/app/Providers/AppServiceProvider::class` on the fly, like for example:
+
+```php
+/**
+ * Bootstrap any application services.
+ * @return void
+ */
+public function boot()
+{
+    # ensure you configure the right channel you use
+    config(['logging.channels.single.path' => \Phar::running()
+            ? dirname(\Phar::running(false)) . '/desired-path/your-app.log'
+            : storage_path('logs/your-app.log')
+        ]);
+}
+```
