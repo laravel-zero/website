@@ -10,7 +10,7 @@ section: content
 If you want to move files in your system, or to different providers like AwsS3 and Dropbox. By default,
 Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.7/filesystem) component of Laravel.
 
-**Note:** By default the root directory is `your-app-name/storage/app`.
+**Note:** By default the root directory is `your-app-name/storage`.
 
 > Writing files after you [build](/docs/build-a-standalone-application) your application is different, check [Writing files in production](#production)
 
