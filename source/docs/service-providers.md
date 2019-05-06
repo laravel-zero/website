@@ -6,7 +6,7 @@ section: content
 ---
 
 
-## Service Providers
+# Service Providers
 
 The `App\ServiceProviders` folder should contain Service Providers files. The usage of
 [Laravel Service Providers](https://laravel.com/docs/providers) is the best way to specify
