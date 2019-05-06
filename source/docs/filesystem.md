@@ -5,7 +5,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-## Filesystem
+# Filesystem
 
 If you want to move files in your system, or to different providers like AwsS3 and Dropbox. By default,
 Laravel Zero ships with the [Filesystem](https://laravel.com/docs/5.7/filesystem) component of Laravel.
