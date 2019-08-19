@@ -27,5 +27,5 @@ DB::table('users')->insert(
 $users = DB::table('users')->get();
 ```
 
-Laravel [Database Migrations](https://laravel.com/docs/migrations) and [Database Seeding](https://laravel.com/docs/seeding) features are also included.
+Laravel [Database Migrations](https://laravel.com/docs/migrations), [database factories](https://laravel.com/docs/5.8/database-testing#writing-factories), and [Database Seeding](https://laravel.com/docs/seeding) features are also included.
 
