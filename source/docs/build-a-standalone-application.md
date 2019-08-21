@@ -26,6 +26,13 @@ We use `humbug/box` to provide fast application bundling. In order to configure 
 
 Please check the box documentation to understand all options: [github.com/humbug/box/blob/master/doc/configuration.md](https://github.com/humbug/box/blob/master/doc/configuration.md).
 
+## Non-interactive build
+
+When you build you get asked about build version, in case you want to skip this step you can provide the build version as an option:
+```bash
+php your-app-name app:build --build-version=<your-build-version>
+```
+
 ## Self update
 
 Using the `app:install` Artisan command you can install the `self-update` component:
