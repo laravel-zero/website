@@ -19,12 +19,7 @@ First, download the Laravel Zero installer using Composer:
 composer global require "laravel-zero/installer"
 ```
 
-Make sure to place composer's system-wide vendor bin directory in your `$PATH` so the laravel Zero executable can be located by your system. This directory exists in different locations based on your operating system; however, some common locations include:
-
-<div class="content-list" markdown="1">
-- macOS: `$HOME/.composer/vendor/bin`
-- GNU / Linux Distributions: `$HOME/.config/composer/vendor/bin`
-</div>
+Make sure to place composer's system-wide vendor bin directory in your `$PATH` so the laravel Zero executable can be located by your system. This directory exists in different locations based on your operating system. On macOS and GNU/Linux distributions, it's `$HOME/.composer/vendor/bin`.
 
 Once installed, the `laravel-zero new` command will create a fresh Laravel Zero installation in the directory you specify. For instance, `laravel-zero new movie-cli` will create a directory named `movie-cli` containing a fresh Laravel Zero installation with all of Laravel Zero's dependencies already installed:
 
