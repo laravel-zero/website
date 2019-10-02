@@ -7,9 +7,29 @@ section: content
 
 # Upgrade Guide
 
+- [Upgrading To 6.0 From 5.8](#upgrade-6.0.0)
 - [Upgrading To 5.8 From 5.7](#upgrade-5.8.0)
 - [Upgrading To 5.7 From 5.6](#upgrade-5.7.0)
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
+
+<a name="upgrade-6.0.0"></a>
+## Upgrading To 6.0 From 5.8
+
+#### Estimated Upgrade Time: 2 - 5 Minutes
+
+> We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
+
+### Updating Dependencies
+
+Update your `laravel-zero/framework` dependency to `^6.0` in your `composer.json` file.
+
+#### If you are using Laravel's String & Array Helper
+
+All `str_` and `array_` helpers have been moved to the new `laravel/helpers` Composer package and removed from the framework. If desired, you may update all calls to these helpers to use the `Illuminate\Support\Str` and `Illuminate\Support\Arr` classes. Alternatively, you can add the new `laravel/helpers` package to your application to continue using these helpers:
+
+```bash
+composer require laravel/helpers
+```
 
 <a name="upgrade-5.8.0"></a>
 ## Upgrading To 5.8 From 5.7
