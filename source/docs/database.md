@@ -29,3 +29,15 @@ $users = DB::table('users')->get();
 
 Laravel [Database Migrations](https://laravel.com/docs/migrations), [database factories](https://laravel.com/docs/5.8/database-testing#writing-factories), and [Database Seeding](https://laravel.com/docs/seeding) features are also included.
 
+If you want to use Redis, include illuminate/redis in your composer file and add the RedisServiceProvider in your `config/app.php`
+
+```bash
+composer require illuminate/redis
+```
+
+Then open `config/app.php` and add to the `providers` array:
+
+
+```php
+Illuminate\Redis\RedisServiceProvider::class,
+```
