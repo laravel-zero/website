@@ -15,19 +15,19 @@
 Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.com/nunomaduro), and is a micro-framework that provides an elegant starting point for your console application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
 
 - Built on top of the [Laravel](https://laravel.com) components.
-- Optional installation of Laravel [Eloquent](/usage?id=database), Laravel [Logging](/usage?id=log) and many others.
-- Supports interactive [menus](/usage?id=interactive-menus) and [desktop notifications](/usage?id=desktop-notifications) on Linux, Windows & MacOS.
-- Ships with a [Scheduler](/usage?id=scheduler) and a [Standalone Compiler](/usage?id=building-a-standalone-application).
+- Optional installation of Laravel [Eloquent](/source/docs/database.md), Laravel [Logging](/source/docs/logging.md) and many others.
+- Supports interactive [menus](/source/docs/build-interactive-menus.md) and [desktop notifications](/source/docs/send-desktop-notifications.md) on Linux, Windows & MacOS.
+- Ships with a [Scheduler](/source/docs/task-scheduling.md) and a [Standalone Compiler](/source/docs/build-a-standalone-application.md).
 - Integration with [Collision](https://github.com/nunomaduro/collision) - Beautiful error reporting
 
 ------
 
 ## Getting started
 
-* [Installation](installation.md)
-* [Upgrade](upgrade.md)
-* [Usage](usage.md)
-* [Contributing](contributing.md)
+* [Installation](/source/docs/nstallation.md)
+* [Upgrade](/source/docs/upgrade.md)
+* [Usage](/source/docs/commands.md)
+* [Contributing](/source/docs/contributing.md)
 
 ------
 
