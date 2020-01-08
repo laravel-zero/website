@@ -33,3 +33,12 @@ can be configured using `config/commands.php`:
 | add  | Here you may specify which commands classes you wish to include.
 | hidden  | Adds the provided commands, but make them hidden.
 | remove  | Removes the list of commands provided.
+
+### Disabling default component providers
+
+The Database, Log, and Queue components support disabling auto-loading for their
+default service provider to allow the use of a custom provider.
+
+To disable the default service provider for a component, set the `useDefaultProvider` value
+to `false` in the configuration file. You can then add your custom `ServiceProvider` class
+to the `app.providers` configuration array.
