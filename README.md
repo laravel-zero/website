@@ -24,7 +24,7 @@ Laravel Zero was created by, and is maintained by [Nuno Maduro](https://github.c
 
 ## Getting started
 
-* [Installation](/source/docs/nstallation.md)
+* [Installation](/source/docs/installation.md)
 * [Upgrade](/source/docs/upgrade.md)
 * [Usage](/source/docs/commands.md)
 * [Contributing](/source/docs/contributing.md)
