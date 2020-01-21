@@ -7,10 +7,28 @@ section: content
 
 # Upgrade Guide
 
+- [Upgrading To 7.0 From 6.x](#upgrade-7.0.0)
 - [Upgrading To 6.0 From 5.8](#upgrade-6.0.0)
 - [Upgrading To 5.8 From 5.7](#upgrade-5.8.0)
 - [Upgrading To 5.7 From 5.6](#upgrade-5.7.0)
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
+
+<a name="upgrade-7.x"></a>
+## Upgrading To 7.0 From 6.x
+
+#### Estimated Upgrade Time: 2 - 5 Minutes
+
+> We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
+
+### Updating Dependencies
+
+Update your `laravel-zero/framework` dependency to `^7.0` in your `composer.json` file.
+
+#### If you are using the Logo component
+
+The Logo component now depends on the [Laminas Text](https://github.com/laminas/laminas-text) package for Figlet generation.
+
+Replace your `zendframework/zend-text` dependency with `"laminas/laminas-text": "^2.7"` in your `composer.json`.
 
 <a name="upgrade-6.0.0"></a>
 ## Upgrading To 6.0 From 5.8
