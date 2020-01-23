@@ -53,11 +53,11 @@ that same file.
 
 ## Database
 
-To use SQLite in your standalone application, you need to set the following value in your .env file:
+To use SQLite in your standalone PHAR application, you need to set the following value in your `.env` file:
 ```bash
-DB_DATABASE=/absolute/path//app/appname/builds/database/database.sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
 ```
-The path is absolutely to the root of your server.
 
-By default the path points to ```database_path('database.sqlite')```, which includes the executable as a folder in the path.
+This must be the absolute path to your SQLite database file.
 
+By default the path points to `database_path('database.sqlite')`, which includes the PHAR executable as a folder in the path.
