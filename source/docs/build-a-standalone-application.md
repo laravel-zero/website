@@ -51,4 +51,13 @@ If the `dotenv` component is installed, you can place a `.env` file in the same
 folder as the build application to make Laravel Zero load environment variables from
 that same file.
 
+## Database
+
+To use SQLite in your standalone application, you need to set the following value in your .env file:
+```bash
+DB_DATABASE=/absolute/path//app/appname/builds/database/database.sqlite
+```
+The path is absolutely to the root of your server.
+
+By default the path points to ```database_path('database.sqlite')```, which includes the executable as a folder in the path.
 
