@@ -34,7 +34,7 @@ Replace your `zendframework/zend-text` dependency with `"laminas/laminas-text": 
 
 The `app.production` configuration value has been removed and replaced by an `app.env` value in order to match Laravel.
 
-Replace `'production' => true` with `'env' => 'development'` in your [`config/app.php`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/config/app.php) file.
+Replace `'production' => false` with `'env' => 'development'` in your [`config/app.php`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/config/app.php) file.
 
 <a name="upgrade-6.0.0"></a>
 ## Upgrading To 6.0 From 5.8
