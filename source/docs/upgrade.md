@@ -13,7 +13,7 @@ section: content
 - [Upgrading To 5.7 From 5.6](#upgrade-5.7.0)
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
 
-<a name="upgrade-7.x"></a>
+<a name="upgrade-7.0.0"></a>
 ## Upgrading To 7.0 From 6.x
 
 #### Estimated Upgrade Time: 2 - 5 Minutes
