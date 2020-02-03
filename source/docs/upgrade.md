@@ -20,9 +20,19 @@ section: content
 
 > We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
 
+### PHP 7.2.5 required
+
+The new minimum PHP version is now 7.2.5.
+
 ### Updating Dependencies
 
 Update your `laravel-zero/framework` dependency to `^7.0` in your `composer.json` file.
+
+#### Symfony 5 required
+
+Laravel Zero 7 upgraded its underlying Symfony components to the 5.x series, which is now also the new minimum compatible version.
+
+Update any `symfony/*` dependencies to `^5.0` in your `composer.json` file where necessary.
 
 #### If you are using the Logo component
 
