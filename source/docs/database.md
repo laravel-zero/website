@@ -27,5 +27,10 @@ DB::table('users')->insert(
 $users = DB::table('users')->get();
 ```
 
-Laravel [Database Migrations](https://laravel.com/docs/migrations), [database factories](https://laravel.com/docs/5.8/database-testing#writing-factories), and [Database Seeding](https://laravel.com/docs/seeding) features are also included.
+Laravel [Database Migrations](https://laravel.com/docs/migrations), [database factories](https://laravel.com/docs/database-testing#writing-factories), and [Database Seeding](https://laravel.com/docs/seeding) features are also included.
 
+## Note on PHAR builds
+
+The `database` directory isn't included in Laravel Zero standalone PHAR builds by default.
+
+If you are using the Database components migration, factory, or seeder functionality make sure to add the directory to your [Box configurations](https://github.com/laravel-zero/laravel-zero/blob/stable/box.json) `directories` section.
