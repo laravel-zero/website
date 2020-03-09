@@ -34,6 +34,12 @@ Laravel Zero 7 upgraded its underlying Symfony components to the 5.x series, whi
 
 Update any `symfony/*` dependencies to `^5.0` in your `composer.json` file where necessary.
 
+#### PHPUnit changes
+
+Laravel Zero 7 now requires a minimum of Collision v4.1.0 which updated the PHPUnit adapter class name.
+
+Replace `NunoMaduro\Collision\Adapters\Phpunit\Listener` with `NunoMaduro\Collision\Adapters\Phpunit\Printer` in your [`phpunit.xml.dist`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/phpunit.xml.dist) file.
+
 #### If you are using the Logo component
 
 The Logo component now depends on the [Laminas Text](https://github.com/laminas/laminas-text) package for Figlet generation.
