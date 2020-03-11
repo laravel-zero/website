@@ -33,6 +33,7 @@ return [
             'Environment Variables' => 'docs/environment-variables',
             'Build a standalone application' => 'docs/build-a-standalone-application',
             'Tinker REPL' => 'docs/tinker-repl',
+            'HTTP Client' => 'docs/http-client',
         ],
     ],
     'Upgrade' => [
