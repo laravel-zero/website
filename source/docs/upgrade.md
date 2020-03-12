@@ -38,7 +38,7 @@ Update any `symfony/*` dependencies to `^5.0` in your `composer.json` file where
 
 Laravel Zero 7 now requires a minimum of Collision v4.1.0 which updated the PHPUnit adapter class name.
 
-Replace `NunoMaduro\Collision\Adapters\Phpunit\Listener` with `NunoMaduro\Collision\Adapters\Phpunit\Printer` in your [`phpunit.xml.dist`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/phpunit.xml.dist) file.
+Remove the `NunoMaduro\Collision\Adapters\Phpunit\Listener` class from your `listeners` block, and add `printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer"` to the `phpunit` block in your [`phpunit.xml.dist`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/phpunit.xml.dist) file.
 
 #### If you are using the Logo component
 
