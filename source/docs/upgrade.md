@@ -7,10 +7,50 @@ section: content
 
 # Upgrade Guide
 
+- [Upgrading To 7.0 From 6.x](#upgrade-7.0.0)
 - [Upgrading To 6.0 From 5.8](#upgrade-6.0.0)
 - [Upgrading To 5.8 From 5.7](#upgrade-5.8.0)
 - [Upgrading To 5.7 From 5.6](#upgrade-5.7.0)
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
+
+<a name="upgrade-7.0.0"></a>
+## Upgrading To 7.0 From 6.x
+
+#### Estimated Upgrade Time: ?
+
+> We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
+
+### PHP 7.2.5 required
+
+The new minimum PHP version is now 7.2.5.
+
+### Updating Dependencies
+
+Update your `laravel-zero/framework` dependency to `^7.0` in your `composer.json` file.
+
+#### Symfony 5 required
+
+Laravel Zero 7 upgraded its underlying Symfony components to the 5.x series, which is now also the new minimum compatible version.
+
+Update any `symfony/*` dependencies to `^5.0` in your `composer.json` file where necessary.
+
+#### PHPUnit changes
+
+Laravel Zero 7 now requires a minimum of Collision v4.1.0 which updated the PHPUnit adapter class name.
+
+Remove the `NunoMaduro\Collision\Adapters\Phpunit\Listener` class from your `listeners` block, and add `printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer"` to the `phpunit` block in your [`phpunit.xml.dist`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/phpunit.xml.dist) file.
+
+#### If you are using the Logo component
+
+The Logo component now depends on the [Laminas Text](https://github.com/laminas/laminas-text) package for Figlet generation.
+
+Replace your `zendframework/zend-text` dependency with `"laminas/laminas-text": "^2.7"` in your `composer.json`.
+
+### Configuration changes
+
+The `app.production` configuration value has been removed and replaced by an `app.env` value in order to match Laravel.
+
+Replace `'production' => false` with `'env' => 'development'` in your [`config/app.php`](https://github.com/laravel-zero/laravel-zero/blob/v7.0.0/config/app.php) file.
 
 <a name="upgrade-6.0.0"></a>
 ## Upgrading To 6.0 From 5.8
