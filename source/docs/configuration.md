@@ -20,7 +20,7 @@ The `config/app.php` contains information related to your application:
 | ------------- | -------------
 | name  | This value is the name of your application
 | version  | This value determines the "version" your application is currently running in.
-| production  | This value determines the "environment" your application is currently running in.
+| env  | This value determines the "environment" your application is currently running in.
 | providers  | The service providers listed here will be automatically loaded on your application.
 
 The default command of your application contains a list of commands. That list of commands

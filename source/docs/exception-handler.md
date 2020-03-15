@@ -34,13 +34,13 @@ Copy the content below and paste it in your newly created file.
 
 namespace App\Exceptions;
 
-use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
     /**
-     * A list of the exception types that should not be reported.
+     * A list of the exception types that are not reported.
      *
      * @var array
      */
@@ -48,20 +48,18 @@ class Handler extends ExceptionHandler
         // \Illuminate\Database\Eloquent\ModelNotFoundException::class,
     ];
 
-
     /**
      * Report or log an exception.
      *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception  $exception
+     * @param  \Throwable  $exception
      * @return void
+     *
+     * @throws \Exception
      */
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         parent::report($exception);
     }
-
 }
 ```
 As you can see we are just extending the default handler here.
@@ -107,7 +105,7 @@ This however results in `RuntimeException` not being reported at all. More fine 
 The following would prevent the *Not enough arguments* exception to be reported, but any other `RuntimeException` would still be reported.
 
 ```php
-public function report(Exception $exception)
+public function report(Throwable $exception)
 {
     if ($exception instanceof RuntimeException) {
         if (Str::contains($exception->getMessage(), ['Not enough arguments'])) {
