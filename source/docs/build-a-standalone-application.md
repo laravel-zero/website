@@ -41,9 +41,28 @@ php <your-app-name> app:install self-update
 ```
 
 This component will add an Artisan `self-update` command to every build application. This command
-will try to download the latest version from github, if available.
+will try to download the latest version from GitHub, if available.
 
-> This documentation is under improvement.
+#### Custom update strategies
+
+The self-updater supports custom "strategies" to configure how the application is updated. By default it uses the `GithubStrategy` which will try to download the PHAR binary from a `builds/` directory in the GitHub source repository.
+
+Custom strategies must implement the following [`StrategyInterface` interface](https://github.com/laravel-zero/framework/blob/master/src/Components/Updater/Strategy/StrategyInterface.php).
+
+By default, a few strategies are provided in Laravel Zero:
+
+- Download the PHAR file from the `builds/` directory on GitHub:  
+  `LaravelZero\Framework\Components\Updater\Strategy\GitHubStrategy`
+- Download the PHAR file from GitHub releases assets:  
+  `LaravelZero\Framework\Components\Updater\Strategy\GitHubReleasesStrategy`
+
+To use a custom strategy, first publish the config using:
+
+```bash
+php <your-app-name> vendor:publish --provider "LaravelZero\Framework\Components\Updater"
+```
+
+Then update the `updater.strategy` value in the configuration file to use the required class name.
 
 ## Environment Variables
 
