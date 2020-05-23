@@ -59,7 +59,7 @@ By default, a few strategies are provided in Laravel Zero:
 To use a custom strategy, first publish the config using:
 
 ```bash
-php <your-app-name> vendor:publish --provider "LaravelZero\Framework\Components\Updater"
+php <your-app-name> vendor:publish --provider "LaravelZero\Framework\Components\Updater\Provider"
 ```
 
 Then update the `updater.strategy` value in the configuration file to use the required class name.
