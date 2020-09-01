@@ -34,3 +34,9 @@ Alternatively, you may also install Laravel Zero by issuing the Composer `create
 ```bash
 composer create-project --prefer-dist laravel-zero/laravel-zero movie-cli
 ```
+
+You will then need to run the `app:rename` command to rename your project:
+
+```bash
+php application app:rename [movie-cli]
+```
