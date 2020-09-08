@@ -15,9 +15,9 @@ section: content
 - [Upgrading To 5.6 From 4.0](#upgrade-5.6.0)
 
 <a name="upgrade-8.0.0"></a>
-## Upgrading To 8.0 From 7.x
+## Upgrading to 8.0 from 7.x
 
-### Estimated Upgrade Time: ??
+### Estimated upgrade time: ??
 
 > We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
 
@@ -25,9 +25,30 @@ section: content
 
 The new minimum PHP version is now 7.3.
 
-### Updating Dependencies
+### Updating dependencies
 
 Update your `laravel-zero/framework` dependency to `^8.0` in your `composer.json` file.
+
+#### Update Illuminate dependencies
+
+If you are using any components (Database, Queue, etc.) that use Illuminate dependencies, these will need to be updated to `^8.0`.
+
+#### Update component dependencies
+
+The following Components have bumped their minimum dependencies. It's unlikely you will need to change anything with these as the previous version selectors include the latest versions.
+
+- Console Dusk:
+    `nunomaduro/laravel-console-dusk` bumped to `^1.8`
+- Http:
+    `guzzlehttp/guzzle` bumped to `^6.5.5|^7.0`
+- Menu:
+    `nunomaduro/laravel-console-menu` bumped to `^3.1`
+- Schedule List:
+    `hmazter/laravel-schedule-list` bumped to `^2.2`
+
+### PHPUnit 9.3
+
+Although Laravel Zero 8 will work with PHPUnit 8.5 or 9.x, we'd recommend updating to use `^9.3` which has a syntax change to the configuration file. The changes applied to update this in the Laravel Zero template can be found in [commit `3712842`](https://github.com/laravel-zero/laravel-zero/commit/37128421cea4c819b6f5e761dfa3aea2868f3560).
 
 <a name="upgrade-7.0.0"></a>
 ## Upgrading To 7.0 From 6.x
