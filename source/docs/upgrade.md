@@ -17,7 +17,7 @@ section: content
 <a name="upgrade-8.0.0"></a>
 ## Upgrading to 8.0 from 7.x
 
-### Estimated upgrade time: ??
+### Estimated upgrade time: 5-10 minutes
 
 > We attempt to document every possible breaking change. Since some of these breaking changes are in obscure parts of the framework only a portion of these changes may actually affect your application.
 
