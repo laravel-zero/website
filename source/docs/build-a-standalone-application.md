@@ -72,11 +72,25 @@ that same file.
 
 ## Database
 
-To use SQLite in your standalone PHAR application, you need to set the following value in your `.env` file:
-```bash
-DB_DATABASE=/absolute/path/to/database.sqlite
+To use SQLite in your standalone PHAR application, you need to tell Laravel Zero where to place the database in a production environment.
+
+Similar to Laravel, this is configured in `config/database.php` under the `connections.sqlite.database` key. By default this is set to `database_path('database.sqlite')` which resolves to `<project>/database/database.sqlite`. Since we can't modify files within the project once the PHAR is built, we need to store this somewhere on the users computer. A good choice for this would be to create a "dot" folder inside your users home folder. For example:
+
+```diff
+// config/database.php
+'connections' => [
+  'sqlite' => [
+      'driver' => 'sqlite',
+      'url' => env('DATABASE_URL'),
+-     'database' => database_path('database.sqlite'),
++     'database' => $_SERVER['HOME'] . DIRECTORY_SEPARATOR . '.your-project-name' . DIRECTORY_SEPARATOR . 'database.sqlite',
+      'prefix' => '',
+      'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+  ],
+]
 ```
 
-This must be the absolute path to your SQLite database file.
+In this case it would tell Laravel to use the database at `/Users/<username>/.your-project-name/database.sqlite` (for MacOS).
 
-By default the path points to `database_path('database.sqlite')`, which includes the PHAR executable as a folder in the path.
+It is important to note that this file will not exist upon installation of your app so you will either need to ensure it exists and is migrated before using the database or provide an `install` command which creates the database + migrates it.
+
