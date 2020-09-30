@@ -92,4 +92,4 @@ Similar to Laravel, this is configured in `config/database.php` under the `conne
 
 In this case it would tell Laravel to use the database at `/Users/<username>/.your-project-name/database.sqlite` (for MacOS).
 
-It is important to note that this file will not exist upon installation of your app so you will either need to ensure it exists and is migrated before using the database or provide an `install` command which creates the database + migrates it.
+It is important to note that this file will not exist upon installation of your app so you will either need to ensure it exists and is migrated before using the database or provide an `install` command which creates the database and migrates it.
