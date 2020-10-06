@@ -7,7 +7,7 @@ section: content
 
 # Installation
 
-> **Requires [PHP 7.2.5+](https://php.net/releases/)**
+> **Requires [PHP 7.3+](https://php.net/releases)**
 
 Laravel Zero utilizes [Composer](https://getcomposer.org) to manage its dependencies. So, before using Laravel Zero, make sure you have Composer installed on your machine.
 
