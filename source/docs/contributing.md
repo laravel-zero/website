@@ -21,9 +21,9 @@ The Laravel Zero source code is managed on GitHub, and there are repositories fo
 - [Laravel Zero Website](https://github.com/laravel-zero/website)
 - [Collision](https://github.com/nunomaduro/collision)
 
-All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/blob/stable/CONTRIBUTING.md).
+All the contribution guidelines are mentioned [here](https://github.com/laravel-zero/laravel-zero/blob/master/CONTRIBUTING.md).
 
-You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/blob/stable/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/enunomaduro)
+You can have a look at the [CHANGELOG](https://github.com/laravel-zero/laravel-zero/blob/master/CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements : [@enunomaduro](https://twitter.com/enunomaduro)
 
 #### Funding
 
@@ -41,6 +41,4 @@ The support will be used to create new features and everything related to make t
 
 #### License
 
-Laravel Zero is an open-source software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/stable/LICENSE.md).
-
-
+Laravel Zero is an open-source software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/master/LICENSE.md).

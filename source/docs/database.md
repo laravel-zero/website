@@ -33,4 +33,4 @@ Laravel [Database Migrations](https://laravel.com/docs/migrations), [database fa
 
 The `database` directory isn't included in Laravel Zero standalone PHAR builds by default.
 
-If you are using the Database components migration, factory, or seeder functionality make sure to add the directory to your [Box configurations](https://github.com/laravel-zero/laravel-zero/blob/stable/box.json) `directories` section.
+If you are using the Database components migration, factory, or seeder functionality make sure to add the directory to your [Box configurations](https://github.com/laravel-zero/laravel-zero/blob/master/box.json) `directories` section.
