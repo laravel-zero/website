@@ -41,4 +41,4 @@ The support will be used to create new features and everything related to make t
 
 #### License
 
-Laravel Zero is an open-source software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/master/LICENSE.md).
+Laravel Zero is an open-source software licensed under the MIT license.
