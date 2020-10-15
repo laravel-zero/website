@@ -3,7 +3,7 @@
 @section('body')
 <section class="container max-w-2xl mx-auto px-6 py-10 md:py-12">
     <div class="flex flex-col-reverse mb-10 lg:flex-row lg:mb-24">
-        <div class="mt-8 w-1/3">
+        <div class="mt-8 w-full md:w-1/3">
             <h1 id="intro-docs-template">{{ $page->siteName }}</h1>
 
             <h2 id="intro-powered-by-jigsaw" class="font-light mt-4">{{ $page->siteDescription }}</h2>
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="mx-auto mb-6 lg:mb-0 w-2/3">
+        <div class="mx-auto w-full md:w-2/3">
             <img src="/assets/img/logo-large.png" alt="{{ $page->siteName }} large logo">
         </div>
     </div>

@@ -46,7 +46,7 @@
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
-        <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+        <header class="flex flex-wrap items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
             <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
                 <div class="flex items-center">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
@@ -59,9 +59,9 @@
                         @include('_nav.search-input')
                     @endif
                 </div>
-            </div>
 
-            @yield('nav-toggle')
+                @yield('nav-toggle')
+            </div>
         </header>
 
         <main role="main" class="w-full flex-auto">
@@ -72,7 +72,7 @@
 
         @stack('scripts')
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-white text-center text-sm mt-6 md:mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
                     &copy; <a href="https://laravel-zero.com" title="Laravel Zero website">Laravel Zero</a> {{ date('Y') }}.
