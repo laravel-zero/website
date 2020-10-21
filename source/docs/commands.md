@@ -76,12 +76,12 @@ used on the application list of commands.
 The `handle` method is the place where the logic of your command should be. This method will be called when your
 command is executed. Note that we are able to inject any dependencies we need into the `handle` method:
 ```php
-    public function handle(Service $service)
-    {
-        $service->execute('foo');
+public function handle(Service $service)
+{
+    $service->execute('foo');
 
-        $this->info('Operation executed');
-    }
+    $this->info('Operation executed');
+}
 ```
 
 The [Command I/O](https://laravel.com/docs/artisan#command-io) topic in the Laravel Documentation, can help

@@ -54,12 +54,13 @@ class InspiringCommandTest extends TestCase
     public function testMigrationCommand()
     {
         $this->artisan('migrate', ['--seed' => true]);
-        
+
         // Assert that a command was called
         $this->assertCommandCalled('migrate', ['--seed' => true]);
         $this->assertCommandCalled('db:seed');
-        
+
         // Assert that a command was *NOT* called
         $this->assertCommandNotCalled('migrate', ['--seed' => false]);
     }
+}
 ```

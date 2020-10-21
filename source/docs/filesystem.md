@@ -44,20 +44,19 @@ If you want to use the `Storage` facade you will need to use a config file, simi
 - Create a file `filesystems.php` in your `config/` directory.
 - Copy and paste the following contents. This code will replace the default `your-app-name/storage/app` folder with the current working directory.
 
-    ```php
-    <?php
-    
-    return [
-        'default' => 'local',
-        'disks' => [
-            'local' => [
-                'driver' => 'local',
-                'root' => getcwd(),
-            ],
+```php
+<?php
+
+return [
+    'default' => 'local',
+    'disks' => [
+        'local' => [
+            'driver' => 'local',
+            'root' => getcwd(),
         ],
-    ];
-     
-    ```
+    ],
+];
+```
     
 - Use the `Storage` facade like you would before.
 

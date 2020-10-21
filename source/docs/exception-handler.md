@@ -95,9 +95,9 @@ You can now start handling exceptions in your new `Handler.php` file.
 The `$dontReport` property of the exception handler contains an array of exception types that will not be logged. For example, if you would not like to report the `RuntimeException`, you would add it to the `dontReport` array.
 
 ```php
-    protected $dontReport = [
-        \Symfony\Component\Console\Exception\RuntimeException::class,
-    ];
+protected $dontReport = [
+    \Symfony\Component\Console\Exception\RuntimeException::class,
+];
 ```
 
 This however results in `RuntimeException` not being reported at all. More fine grained control can be achieved by updating the `report` function.
