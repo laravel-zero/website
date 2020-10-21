@@ -21,9 +21,11 @@ $this->task("Doing something else", function () {
 ```
 
 The code above will output the following result:
-<p align="center">
-    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-console-task/master/docs/example.png" width="50%">
-</p>
+
+<img
+    src="https://raw.githubusercontent.com/nunomaduro/laravel-console-task/master/docs/example.png"
+    class="md:w-4/5 md:mx-auto"
+>
 
 Get more details: [https://github.com/nunomaduro/laravel-console-task](https://github.com/nunomaduro/laravel-console-task).
 

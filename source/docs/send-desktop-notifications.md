@@ -14,9 +14,11 @@ $this->notify("Hello Web Artisan", "Love beautiful..", "icon.png");
 ```
 
 The code above will generate the following notification in your desktop:
-<p align="center">
-    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-desktop-notifier/stable/docs/icon.png" width="50%">
-</p>
+
+<img
+    src="https://raw.githubusercontent.com/nunomaduro/laravel-desktop-notifier/stable/docs/icon.png"
+    class="md:w-4/5 md:mx-auto"
+>
 
 Get more details: [https://github.com/nunomaduro/laravel-desktop-notifier](https://github.com/nunomaduro/laravel-desktop-notifier).
 
