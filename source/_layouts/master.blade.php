@@ -45,9 +45,9 @@
         @endif
     </head>
 
-    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
-        <header class="flex flex-wrap items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
-            <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-900 leading-normal font-sans">
+        <header class="flex flex-wrap items-center shadow-sm bg-white border-b h-24 mb-8 py-4" role="banner">
+            <div class="container flex items-center mx-auto">
                 <div class="flex items-center">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
                         <img class="h-8 md:h-10 mr-3" src="/assets/img/logo.svg" alt="{{ $page->siteName }} logo" />
@@ -72,16 +72,16 @@
 
         @stack('scripts')
 
-        <footer class="bg-white text-center text-sm mt-6 md:mt-12 py-4" role="contentinfo">
+        <footer class="bg-gray-800 text-gray-200 text-center text-sm mt-6 md:mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
-                    &copy; <a href="https://laravel-zero.com" title="Laravel Zero website">Laravel Zero</a> {{ date('Y') }}.
+                    &copy; <a href="https://laravel-zero.com" class="font-bold hover:text-white" title="Laravel Zero website">Laravel Zero</a> {{ date('Y') }}.
                 </li>
 
                 <li>
-                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
-                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
-                    Logo by <a href="https://twitter.com/caneco" title="Caneco">Caneco</a>.
+                    Built with <a href="http://jigsaw.tighten.co" class="font-bold hover:text-white" title="Jigsaw by Tighten">Jigsaw</a>
+                    and <a href="https://tailwindcss.com" class="font-bold hover:text-white" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
+                    Logo by <a href="https://twitter.com/caneco" class="font-bold hover:text-white" title="Caneco">Caneco</a>.
                 </li>
             </ul>
         </footer>
