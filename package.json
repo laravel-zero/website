@@ -8,6 +8,7 @@
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
+        "@tailwindcss/typography": "^0.2.0",
         "browser-sync": "^2.26.3",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^3.2.3",
@@ -20,7 +21,7 @@
         "node-cmd": "^3.0.0",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "tailwindcss": "^0.7.2",
+        "tailwindcss": "^1.9.5",
         "vue-template-compiler": "^2.5.21",
         "yargs": "^4.6.0"
     }
