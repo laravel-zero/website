@@ -5,7 +5,18 @@ module.exports = {
     purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true,
   },
-  purge: [],
+  purge: {
+    content: [
+      './source/**/*.html',
+      './source/**/*.md',
+      './source/**/*.js',
+      './source/**/*.php',
+      './source/**/*.vue',
+    ],
+    options: {
+      whitelist: [/language/, /hljs/, /algolia/],
+    },
+  },
   theme: {
     container: {
       padding: '2rem',
