@@ -10,19 +10,19 @@
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.2.0",
-        "browser-sync": "^2.26.3",
-        "browser-sync-webpack-plugin": "^2.0.1",
-        "cross-env": "^3.2.3",
-        "docsearch.js": "^2.6.2",
+        "browser-sync": "^2.26.13",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "cross-env": "^7.0.2",
+        "docsearch.js": "^2.6.3",
         "extra-watch-webpack-plugin": "^1.0.3",
         "hasbin": "^1.2.3",
-        "highlight.js": "^9.13.1",
-        "laravel-mix": "^4.0.0",
+        "highlight.js": "^9.18.3",
+        "laravel-mix": "^5.0.7",
         "node-cmd": "^3.0.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^7.1.0",
+        "sass": "^1.27.0",
+        "sass-loader": "^10.0.4",
         "tailwindcss": "^1.9.5",
-        "vue-template-compiler": "^2.5.21",
-        "yargs": "^4.6.0"
+        "vue-template-compiler": "^2.6.12",
+        "yargs": "^16.1.0"
     }
 }
