@@ -38,9 +38,10 @@ $this->info("You have chosen the option number #$option");
 When you now run your command your output should be similar to this
 image:
 
-<p align="center" class="my-0">
-    <img src="https://raw.githubusercontent.com/nunomaduro/laravel-console-menu/master/docs/example.png" width="70%">
-</p>
+<img
+    src="https://raw.githubusercontent.com/nunomaduro/laravel-console-menu/master/docs/example.png"
+    class="md:w-4/5 md:mx-auto"
+>
 
 <h4 class="mt-0">Changing the appearance</h4>
 

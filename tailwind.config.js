@@ -21,12 +21,11 @@ module.exports = {
           },
           code: {
             color: theme('colors.gray.700'),
+            padding: theme('spacing.1'),
+            fontSize: '0.75rem',
+            boxShadow: theme('boxShadow.default'),
             fontWeight: theme('fontWeight.light'),
-            paddingTop: theme('spacing.1'),
-            paddingBottom: theme('spacing.1'),
-            paddingLeft: theme('spacing.2'),
-            paddingRight: theme('spacing.2'),
-            borderRadius: theme('borderRadius.rounded'),
+            borderRadius: theme('borderRadius.default'),
             backgroundColor: theme('colors.gray.200'),
             '&::before, &::after': {
               content: 'none !important',
